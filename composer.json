@@ -1,0 +1,50 @@
+{
+    "name": "simtabi/netsapiens-api",
+    "description": "A PHP Library for calling the NetSapiens REST API",
+    "keywords": [
+        "simtabi",
+        "netsapiens"
+    ],
+    "homepage": "https://github.com/simtabi/netsapiens",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Imani Manyara",
+            "email": "imani@simtabi.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Easter Mukora",
+            "email": "easter@simtabi.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "guzzlehttp/guzzle": ">=7.5.0",
+        "phpfastcache/phpfastcache": ">=9.1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Simtabi\\NetSapiens\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Simtabi\\NetSapiens\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "bin": ["bin/netsapiens"]
+}
