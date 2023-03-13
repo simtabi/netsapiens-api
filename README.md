@@ -95,67 +95,71 @@ If you do not want to use the default caching mechanism.
 ``cacher`` accepts a ``callback function`` where you can pass in a custom caching implementation.
 
 # Available Resources
-1. Address
-2. Agent
-3. AgentLog
-4. AnswerRule
-5. Audio
-6. Call
-7. CallCenterStats
-8. CallerIDEmergency
-9. CallQueue
-10. CallQueueEmailReport
-11. CallQueueStats
-12. CallRequest
-13. CDR2
-14. CDRExport
-15. CDRSchedule
-16. Chart
-17. Conference
-18. ConferenceParticipant
-19. ConferenceRecord
-20. Connection
-21. Contact
-22. Dashboard
-23. Default
-24. Department
-25. Device
-26. DeviceModel
-27. DeviceProfile
-28. DialPlan
-29. DialPolicy
-30. DialRule
-31. Domain
-32. Image
-33. MAC
-34. Meeting
-35. Message
-36. MessageSession
-37. NDPServer
-38. Permission
-39. PhoneConfiguration
-40. PhoneNumber
-41. Presence
-42. Queued
-43. Quota
-44. Recording
-45. Reseller
-46. Route
-47. ServerInfo
-48. SFU
-49. Site
-50. Sites
-51. SMSNumber
-52. Subscriber
-53. Subscription
-54. TimeFrame
-55. TimeRange
-56. Trace
-57. Turn
-58. UCInbox
-59. UIConfig
-60. Upload
-61. VoicemailReminders
+Resources marked in green are ready for use.
+
+| #   | Resource        |  Ready?  |
+|:----|:----------------|:---------|
+| 1   | Address         | ❌        |
+| 2   | Agent           | ❌        |
+| 3   | AgentLog        | ❌        |
+| 4   | AnswerRule      | ❌        |
+| 5   | Audio           | ❌        |
+| 6   | Call | ❌        |
+| 7   | CallCenterStats | ❌        |
+| 8   | CallerIDEmergency | ❌        |
+| 9   | CallQueue | ✅        |
+| 10  | CallQueueEmailReport | ❌        |
+| 11  | CallQueueStats | ❌        |
+| 12  | CallRequest | ❌        |
+| 13  | CDR2 | ❌        |
+| 14  | CDRExport | ❌        |
+| 15  | CDRSchedule | ❌        |
+| 16  | Chart | ❌        |
+| 17  | Conference | ❌        |
+| 18  | ConferenceParticipant | ❌        |
+| 19  | ConferenceRecord | ❌        |
+| 20  | Connection | ❌        |
+| 21  | Contact | ❌        |
+| 22  | Dashboard | ❌        |
+| 23  | Default | ❌        |
+| 24  | Department | ❌        |
+| 25  | Device | ❌        |
+| 26  | DeviceModel | ❌        |
+| 27  | DeviceProfile | ❌        |
+| 28  | DialPlan | ❌        |
+| 29  | DialPolicy | ❌        |
+| 30  | DialRule | ❌        |
+| 31  | Domain | ❌        |
+| 32  | Image | ❌        |
+| 33  | MAC | ❌        |
+| 34  | Meeting | ❌        |
+| 35  | Message | ❌        |
+| 36  | MessageSession | ❌        |
+| 37  | NDPServer | ❌        |
+| 38  | Permission | ❌        |
+| 39  | PhoneConfiguration | ❌        |
+| 40  | PhoneNumber | ❌        |
+| 41  | Presence | ❌        |
+| 42  | Queued | ❌        |
+| 43  | Quota | ❌        |
+| 44  | Recording | ❌        |
+| 45  | Reseller | ❌        |
+| 46  | Route | ❌        |
+| 47  | ServerInfo | ❌        |
+| 48  | SFU | ❌        |
+| 49  | Site | ❌        |
+| 50  | Sites | ❌        |
+| 51  | SMSNumber | ❌        |
+| 52  | Subscriber | ❌        |
+| 53  | Subscription | ❌        |
+| 54  | TimeFrame | ❌        |
+| 55  | TimeRange | ❌        |
+| 56  | Trace | ❌        |
+| 57  | Turn | ❌        |
+| 58  | UCInbox | ❌        |
+| 59  | UIConfig | ❌        |
+| 60  | Upload | ❌        |
+| 61  | VoicemailReminders | ❌        |
 
 ## 1. Create a Call Queue
 
