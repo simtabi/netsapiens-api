@@ -51,16 +51,16 @@ try {
         password     : $password,
         baseUrl      : $baseUrl,
         cacher       : function (array $args) use ($cachePath) {
-       $cacheData = $args[0];
-       $cacheId   = $args[1];
-
-        return Helpers::cacher(
-            items :            $cacheData,
-            cacheId:           $cacheId,
-            cachePath :        $cachePath,
-            lifeTimeInSeconds: Helpers::CACHE_LIFETIME_IN_SECONDS,
-            resetCache:        true,
-        );
+                        $cacheData = $args[0];
+                        $cacheId   = $args[1];
+                        
+                        return Helpers::cacher(
+                            items :            $cacheData,
+                            cacheId:           $cacheId,
+                            cachePath :        $cachePath,
+                            lifeTimeInSeconds: Helpers::CACHE_LIFETIME_IN_SECONDS,
+                            resetCache:        true,
+                        );
     },
         guzzleConfig : $guzzleConfig
     );
