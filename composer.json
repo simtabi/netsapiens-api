@@ -1,0 +1,50 @@
+{
+    "name": "usipcom/netsapiens-rest-api-sdk",
+    "description": "A PHP SDK Library for calling the NetSapiens REST API",
+    "keywords": [
+        "usipcom",
+        "netsapiens"
+    ],
+    "homepage": "https://github.com/usipcom/netsapiens",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Imani Manyara",
+            "homepage": "imanimanyara.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Easter Mukora",
+            "homepage": "eastermukora.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "guzzlehttp/guzzle": ">=7.5.0",
+        "phpfastcache/phpfastcache": ">=9.1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "USIPCOM\\NetSapiens\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "USIPCOM\\NetSapiens\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "bin": ["bin/netsapiens"]
+}
