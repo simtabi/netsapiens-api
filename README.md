@@ -220,7 +220,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email io@io.com instead of using the issue tracker.
+If you discover any security related issues, please email imanyara@usipcom.com instead of using the issue tracker.
 
 ## Credits
 
