@@ -17,7 +17,7 @@ use Phpfastcache\Exceptions\PhpfastcacheInvalidTypeException;
 use Phpfastcache\Exceptions\PhpfastcacheLogicException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
-use Simtabi\Laranail\Nails\General\Traits\HasErrorStorage;
+use Simtabi\NetSapiens\Traits\HasErrorStorage;
 use Simtabi\NetSapiens\Exceptions\NetSapiensException;
 use Simtabi\NetSapiens\Helpers\Helpers;
 use Simtabi\NetSapiens\Resources\Auth\OAuth2;

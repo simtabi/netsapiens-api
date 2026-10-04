@@ -4,7 +4,7 @@ namespace Simtabi\NetSapiens\Resources\Auth;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Simtabi\Laranail\Nails\General\Traits\HasErrorStorage;
+use Simtabi\NetSapiens\Traits\HasErrorStorage;
 use Simtabi\NetSapiens\Exceptions\NetSapiensException;
 use Simtabi\NetSapiens\Helpers\Helpers;
 
@@ -462,7 +462,7 @@ class OAuth2
             $parameters['grant_type']    = $grantType;
 
             // Define credentials based on grant type
-            if (pheg()->str()->compare()->string($grantType, 'refresh_token')) {
+            if (strcasecmp($grantType, 'refresh_token') === 0) { // case-insensitive, as the pheg call it replaces
                 $parameters['refresh_token'] = $this->password;
             } else {
                 $parameters['username']      = $this->username;
