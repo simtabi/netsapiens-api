@@ -4,6 +4,10 @@ namespace Simtabi\NetSapiens\Traits;
 
 use Simtabi\NetSapiens\Helpers\Helpers;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. No replacement: v2 resources build their paths from the documented templates. Removal no earlier than 2.0.0.
+ */
 trait HasHelperFunctions
 {
 

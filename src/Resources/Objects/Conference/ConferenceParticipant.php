@@ -5,6 +5,10 @@ namespace Simtabi\NetSapiens\Resources\Objects\Conference;
 use Simtabi\NetSapiens\Resources\Auth\OAuth2;
 use Simtabi\NetSapiens\Resources\Resource;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Client::conferenceParticipants() instead. Removal no earlier than 2.0.0.
+ */
 class ConferenceParticipant extends Resource
 {
 

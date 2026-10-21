@@ -8,6 +8,10 @@ use Simtabi\NetSapiens\Traits\HasErrorStorage;
 use Simtabi\NetSapiens\Exceptions\NetSapiensException;
 use Simtabi\NetSapiens\Helpers\Helpers;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Auth\AccessTokenAuthenticator via Client::withAccessToken() instead. Removal no earlier than 2.0.0.
+ */
 class OAuth2
 {
     use HasErrorStorage;

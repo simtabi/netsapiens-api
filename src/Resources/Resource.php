@@ -6,6 +6,10 @@ use Simtabi\NetSapiens\Resources\Auth\OAuth2;
 use Simtabi\NetSapiens\Resources\Request\Request;
 use Simtabi\NetSapiens\Traits\HasHelperFunctions;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Resources\V2\Resource instead. Removal no earlier than 2.0.0.
+ */
 abstract class Resource
 {
 
