@@ -86,6 +86,24 @@ final class ResourceContractTest extends TestCase
         $this->assertSame('/domains/example.test/users/1001%40site%2Fx', $fake->last()?->path);
     }
 
+    public function test_a_dot_segment_cannot_be_smuggled_through_a_path_value(): void
+    {
+        $fake   = new FakeTransport(Response::json(200, []));
+        $client = Client::withApiKey('pbx.example.test', Credentials::key(), $fake);
+
+        foreach (['..', '.', ''] as $value) {
+            try {
+                $client->users()->getUser('example.test', $value);
+                $this->fail("'{$value}' was accepted as a path value");
+            } catch (\InvalidArgumentException) {
+                $this->assertCount(0, $fake->sent(), 'nothing was sent');
+            }
+        }
+
+        $client->users()->getUser('example.test', '..1001');
+        $this->assertSame('/domains/example.test/users/..1001', $fake->last()?->path, 'dots inside a value are fine');
+    }
+
     public function test_every_public_resource_method_is_in_the_fixture(): void
     {
         $files = glob(dirname(__DIR__, 2) . '/src/Resources/V2/*.php') ?: [];
