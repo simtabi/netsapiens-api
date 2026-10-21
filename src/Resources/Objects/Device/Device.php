@@ -42,7 +42,7 @@ class Device  extends Resource
                 'body' => $bodyParams,
             ],
             headers:    [],
-            verify: $this->guzzleConfig['verify'] ?? false,
+            verify: $this->guzzleConfig['verify'] ?? true,
             cacher: $this->cacher,
         );
 
@@ -82,7 +82,7 @@ class Device  extends Resource
                 'body' => $bodyParams,
             ],
             headers:    [],
-            verify: $this->guzzleConfig['verify'] ?? false,
+            verify: $this->guzzleConfig['verify'] ?? true,
             cacher: $this->cacher,
         );
 
@@ -114,7 +114,7 @@ class Device  extends Resource
                 'body' => $bodyParams,
             ],
             headers:    [],
-            verify: $this->guzzleConfig['verify'] ?? false,
+            verify: $this->guzzleConfig['verify'] ?? true,
             cacher: $this->cacher,
         );
 

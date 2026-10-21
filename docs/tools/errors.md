@@ -29,6 +29,8 @@ try {
 }
 ```
 
+An exception never carries your credentials. `$e->request` is the request before the `Authorization` header was added. When a login fails, its password, client secret, MFA passcode and tokens are replaced with `[redacted]`. Logging an exception or sending it to an error tracker is therefore safe.
+
 The message ends with the `message` field of the API's `ErrorResponse` (`{code, message}`), or with the raw body when there is no such field.
 
 ## Rate limits

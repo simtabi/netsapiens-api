@@ -96,7 +96,7 @@ Hosted at <https://opensource.simtabi.com/documentation/simtabi/netsapiens-api/>
 
 ## Contributing and security
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities to `security@simtabi.com`, not the issue tracker. Written by [Imani Manyara](https://github.com/imanimanyara) and [Easter Mukora](https://github.com/eastermukora), with [all contributors](https://github.com/simtabi/netsapiens-api/graphs/contributors).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md), never in a public issue. Written by [Imani Manyara](https://github.com/imanimanyara) and [Easter Mukora](https://github.com/eastermukora), with [all contributors](https://github.com/simtabi/netsapiens-api/graphs/contributors).
 
 ## License
 

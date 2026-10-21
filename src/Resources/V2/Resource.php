@@ -36,13 +36,25 @@ abstract class Resource
     }
 
     /**
+     * Fill a path template. Each value is URL-encoded, so a "/" stays inside its segment, and a
+     * value that is empty, "." or ".." is refused, because a server that normalises the path would
+     * otherwise send the call to a different endpoint.
+     *
      * @param array<string, string> $path
      */
     public static function expand(string $template, array $path): string
     {
         return (string) preg_replace_callback(
             '/\{([^}]+)\}/',
-            static fn (array $m): string => rawurlencode($path[$m[1]] ?? throw new \LogicException("Missing path parameter {$m[1]}")),
+            static function (array $m) use ($path): string {
+                $value = $path[$m[1]] ?? throw new \LogicException("Missing path parameter {$m[1]}");
+
+                if (in_array($value, ['', '.', '..'], true)) {
+                    throw new \InvalidArgumentException(sprintf('Path parameter %s cannot be "%s"', $m[1], $value));
+                }
+
+                return rawurlencode($value);
+            },
             $template,
         );
     }

@@ -40,16 +40,26 @@ Before submitting a pull request:
 
 If the project maintainer has any additional requirements, you will find them listed here.
 
-- **[PSR-2 Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)** - The easiest way to apply the conventions is to install [PHP Code Sniffer](https://pear.php.net/package/PHP_CodeSniffer).
+- **[PSR-12 Coding Standard](https://www.php-fig.org/psr/psr-12/)** with `declare(strict_types=1)` and typed signatures. StyleCI applies the `laravel` preset on pull requests. PSR-12 replaced PSR-2, which this guide used to name.
 
-- **Add tests!** - Your patch won't be accepted if it doesn't have tests.
+- **Add tests!** - Your patch won't be accepted if it doesn't have tests. Run them with `composer test`.
 
-- **Document any change in behaviour** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
+- **No network in tests.** Use `Simtabi\NetSapiens\Testing\FakeTransport` for v2 code and a Guzzle `MockHandler` for v1 code. No test may call a real NetSapiens server.
+
+- **Generate credentials, never write them down.** Test passwords, secrets and keys come from `tests/Support/Credentials`, which makes fresh ones every run, so secret scanners have nothing to report.
+
+- **Do not hand-edit generated code.** `src/Resources/V2/*` (except `Resource.php`), `src/Data/*` (except `Model.php`) and `tests/Fixtures/operations.php` are written by `.dev/generate.php`. Change the generator and regenerate; [docs/architecture.md](docs/architecture.md) explains how.
+
+- **Deprecate, do not remove.** A public class or method that is superseded gets `@deprecated`, names its replacement and the earliest release that may remove it, and keeps working.
+
+- **Document any change in behaviour** - Make sure the `README.md`, `docs/` and the `[Unreleased]` section of `CHANGELOG.md` are kept up-to-date.
 
 - **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option.
 
 - **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
 
 - **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
+
+- **Security issues are not pull requests.** Report them privately as described in [SECURITY.md](SECURITY.md).
 
 **Happy coding**!

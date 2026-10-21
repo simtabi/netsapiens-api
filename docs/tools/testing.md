@@ -33,7 +33,11 @@ The token flows use the same transport, so a test of `withAccessToken()` queues 
 composer test
 ```
 
-No test reaches the network. `tests/V2/ResourceContractTest.php` calls each of the 414 generated methods and checks its verb and path.
+No test reaches the network. The suite checks:
+
+- **Contracts:** `tests/V2/ResourceContractTest.php` calls each of the 414 generated methods. It checks the verb, the path, every documented query parameter under its API name, the body (JSON or multipart), the return shape (model, list of models, or decoded JSON) and the `@see` link to the reference page. Floors on each count make a generator run that drops anything fail.
+- **The wire:** `tests/V2/EndToEndTest.php` runs the real `GuzzleTransport` against Guzzle's mock handler, so the exact URLs, headers and bodies are checked, including the token login.
+- **Authentication, errors, paging, models:** each has its own test, and so do the v1 repairs and the deprecation markers.
 
 ---
 

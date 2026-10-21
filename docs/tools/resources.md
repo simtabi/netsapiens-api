@@ -15,6 +15,8 @@ In order:
 3. optional query parameters, each defaulting to `null`, which leaves it out of the request;
 4. `$body` (an array sent as JSON) or `$multipart` (Guzzle-style parts for file uploads).
 
+Path values are URL-encoded, so `1001@site/x` stays one segment. A path value that is empty, `.` or `..` throws `InvalidArgumentException` before anything is sent, because a server that normalises the path would otherwise answer a different endpoint.
+
 The order of query parameters follows the documentation and is not alphabetical, so pass them by name:
 
 ```php

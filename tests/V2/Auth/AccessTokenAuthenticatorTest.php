@@ -128,6 +128,42 @@ final class AccessTokenAuthenticatorTest extends TestCase
         $this->authenticator($fake)->token();
     }
 
+    public function test_a_failed_login_does_not_carry_the_password_or_secret_in_the_exception(): void
+    {
+        $fake = (new FakeTransport())->pushJson(['code' => 401, 'message' => 'bad credentials'], 401);
+
+        try {
+            $this->authenticator($fake)->token();
+            $this->fail('no exception');
+        } catch (AuthenticationException $e) {
+            $dump = print_r($e->request, true) . var_export($e->request->body, true);
+            $this->assertStringNotContainsString(Credentials::password(), $dump);
+            $this->assertStringNotContainsString(Credentials::secret(), $dump);
+            $this->assertSame('[redacted]', $e->request->body['password'] ?? null);
+            $this->assertSame('1001@example.test', $e->request->body['username'] ?? null, 'non-secret fields stay for debugging');
+        }
+
+        $this->assertSame(Credentials::password(), $fake->sent()[0]->body['password'] ?? null, 'the real request was sent intact');
+    }
+
+    public function test_a_failed_refresh_does_not_carry_the_refresh_token_in_the_exception(): void
+    {
+        $fake = (new FakeTransport())
+            ->pushJson(['access_token' => 'at1', 'refresh_token' => 'secret-refresh', 'expires_in' => 60])
+            ->pushJson(['code' => 400, 'message' => 'invalid_grant'], 400)
+            ->pushJson(['code' => 401, 'message' => 'locked'], 401);
+        $auth = $this->authenticator($fake);
+        $auth->token();
+        $this->now += 120;
+
+        try {
+            $auth->token();
+            $this->fail('no exception');
+        } catch (AuthenticationException $e) {
+            $this->assertStringNotContainsString(Credentials::password(), var_export($e->request->body, true));
+        }
+    }
+
     public function test_a_response_without_an_access_token_is_an_authentication_error(): void
     {
         $fake = (new FakeTransport())->pushJson(['mfa_required' => 'yes']);

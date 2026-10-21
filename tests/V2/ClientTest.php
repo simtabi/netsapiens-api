@@ -91,6 +91,7 @@ final class ClientTest extends TestCase
             $this->assertSame($status, $e->status);
             $this->assertSame('GET /domains/example.test returned ' . $status . ': Domain example.test not found', $e->getMessage());
             $this->assertSame('/domains/example.test', $e->request->path);
+            $this->assertNull($e->request->header('Authorization'), 'the exception never carries the bearer');
         }
     }
 

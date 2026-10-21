@@ -86,7 +86,7 @@ class CallQueue extends Resource
             headers:    [
                 'Content-Type'  => 'application/json',
             ],
-            verify: $this->guzzleConfig['verify'] ?? false,
+            verify: $this->guzzleConfig['verify'] ?? true,
             cacher: $this->cacher,
         );
 

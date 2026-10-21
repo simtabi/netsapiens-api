@@ -14,6 +14,22 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'by-ip' => 'byIp',
+      'action-type' => 'actionType',
+      'target-domain' => 'targetDomain',
+      'target-object' => 'targetObject',
+      'target-host' => 'targetHost',
+      'target-user' => 'targetUser',
+      'by-client' => 'byClient',
+      'by-domain' => 'byDomain',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_accesslog',
   ),
   1 => 
   array (
@@ -24,6 +40,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\AccessToken',
+    ),
+    'page' => 'post_authcode',
   ),
   2 => 
   array (
@@ -34,6 +60,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_ssoenroll',
   ),
   3 => 
   array (
@@ -44,6 +76,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_tokens-1',
   ),
   4 => 
   array (
@@ -55,6 +93,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getaddressesfordomain',
   ),
   5 => 
   array (
@@ -66,6 +110,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createaddressfordomain',
   ),
   6 => 
   array (
@@ -77,6 +127,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'getaddressescountfordomain',
   ),
   7 => 
   array (
@@ -88,6 +148,13 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getaddressendpointsfordomain',
   ),
   8 => 
   array (
@@ -99,6 +166,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createaddressendpoint',
   ),
   9 => 
   array (
@@ -111,6 +184,12 @@ return array (
       'domain' => 'domain',
       'endpoint' => 'endpoint',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'deleteaddressendpoint',
   ),
   10 => 
   array (
@@ -123,6 +202,12 @@ return array (
       'domain' => 'domain',
       'endpoint' => 'endpoint',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updateaddressendpoint',
   ),
   11 => 
   array (
@@ -134,6 +219,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'validateaddress',
   ),
   12 => 
   array (
@@ -146,6 +237,12 @@ return array (
       'domain' => 'domain',
       'emergency-address-id' => 'emergencyAddressId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deleteaddressfordomain',
   ),
   13 => 
   array (
@@ -158,6 +255,12 @@ return array (
       'domain' => 'domain',
       'emergency-address-id' => 'emergencyAddressId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updateaddressfordomain',
   ),
   14 => 
   array (
@@ -170,6 +273,15 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+      'show_all_personal' => 'showAllPersonal',
+      'show_only_personal' => 'showOnlyPersonal',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getaddressesforuser',
   ),
   15 => 
   array (
@@ -182,6 +294,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createaddressforuser',
   ),
   16 => 
   array (
@@ -195,6 +313,12 @@ return array (
       'user' => 'user',
       'address_id' => 'addressId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deleteaddressforuser',
   ),
   17 => 
   array (
@@ -208,6 +332,12 @@ return array (
       'user' => 'user',
       'emergency-address-id' => 'emergencyAddressId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getaddressusingaddressid',
   ),
   18 => 
   array (
@@ -221,6 +351,12 @@ return array (
       'user' => 'user',
       'emergency-address-id' => 'emergencyAddressId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updateaddressforuser',
   ),
   19 => 
   array (
@@ -234,6 +370,16 @@ return array (
       'callqueue-agent-id' => 'callqueueAgentId',
       'status' => 'status',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'agentstatus',
   ),
   20 => 
   array (
@@ -247,6 +393,16 @@ return array (
       'callqueue' => 'callqueue',
       'callqueue-agent-id' => 'callqueueAgentId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'agentlogin',
   ),
   21 => 
   array (
@@ -260,6 +416,16 @@ return array (
       'callqueue' => 'callqueue',
       'callqueue-agent-id' => 'callqueueAgentId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'agentlogout',
   ),
   22 => 
   array (
@@ -273,6 +439,16 @@ return array (
       'callqueue' => 'callqueue',
       'callqueue-agent-id' => 'callqueueAgentId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'agentsinglecall',
   ),
   23 => 
   array (
@@ -284,6 +460,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Agent',
+    ),
+    'page' => 'readagentsdomain',
   ),
   24 => 
   array (
@@ -296,6 +482,16 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Agent',
+    ),
+    'page' => 'readagents',
   ),
   25 => 
   array (
@@ -308,6 +504,16 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Agent',
+    ),
+    'page' => 'createagent',
   ),
   26 => 
   array (
@@ -320,6 +526,16 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-callqueues-callqueue-agents-count',
   ),
   27 => 
   array (
@@ -333,6 +549,16 @@ return array (
       'callqueue' => 'callqueue',
       'callqueue-agent-id' => 'callqueueAgentId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deleteagent',
   ),
   28 => 
   array (
@@ -346,6 +572,16 @@ return array (
       'callqueue' => 'callqueue',
       'callqueue-agent-id' => 'callqueueAgentId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Agent',
+    ),
+    'page' => 'readagent',
   ),
   29 => 
   array (
@@ -359,6 +595,16 @@ return array (
       'callqueue' => 'callqueue',
       'callqueue-agent-id' => 'callqueueAgentId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updateagent',
   ),
   30 => 
   array (
@@ -371,6 +617,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-answerrules',
   ),
   31 => 
   array (
@@ -383,6 +635,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-answerrules',
   ),
   32 => 
   array (
@@ -395,6 +653,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-users-user-answerrules-count',
   ),
   33 => 
   array (
@@ -407,6 +675,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-users-user-answerrules-reorder',
   ),
   34 => 
   array (
@@ -420,6 +694,16 @@ return array (
       'user' => 'user',
       'timeframe' => 'timeframe',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_domains-domain-users-user-answerrules-timeframe',
   ),
   35 => 
   array (
@@ -433,6 +717,12 @@ return array (
       'user' => 'user',
       'timeframe' => 'timeframe',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-answerrules-timeframe',
   ),
   36 => 
   array (
@@ -446,6 +736,12 @@ return array (
       'user' => 'user',
       'timeframe' => 'timeframe',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-users-user-answerrules-timeframe',
   ),
   37 => 
   array (
@@ -456,6 +752,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-users-answerrules',
   ),
   38 => 
   array (
@@ -466,6 +768,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readapikeys',
   ),
   39 => 
   array (
@@ -476,6 +784,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createapikey',
   ),
   40 => 
   array (
@@ -487,6 +801,16 @@ return array (
     array (
       'key_id' => 'keyId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'revokeapikey',
   ),
   41 => 
   array (
@@ -498,6 +822,12 @@ return array (
     array (
       'key_id' => 'keyId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readapikey',
   ),
   42 => 
   array (
@@ -509,6 +839,16 @@ return array (
     array (
       'key_id' => 'keyId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updateapikey',
   ),
   43 => 
   array (
@@ -519,6 +859,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\ApiKey',
+    ),
+    'page' => 'readmyapikey',
   ),
   44 => 
   array (
@@ -529,6 +879,22 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'by-ip' => 'byIp',
+      'action-type' => 'actionType',
+      'target-domain' => 'targetDomain',
+      'target-object' => 'targetObject',
+      'target-host' => 'targetHost',
+      'target-user' => 'targetUser',
+      'by-client' => 'byClient',
+      'by-domain' => 'byDomain',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_auditlog',
   ),
   45 => 
   array (
@@ -540,6 +906,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-autoattendants',
   ),
   46 => 
   array (
@@ -551,6 +923,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-autoattendants',
   ),
   47 => 
   array (
@@ -564,6 +942,12 @@ return array (
       'user' => 'user',
       'prompt' => 'prompt',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-autoattendants-prompt',
   ),
   48 => 
   array (
@@ -577,6 +961,12 @@ return array (
       'user' => 'user',
       'prompt' => 'prompt',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-autoattendants-prompt',
   ),
   49 => 
   array (
@@ -590,6 +980,12 @@ return array (
       'user' => 'user',
       'prompt' => 'prompt',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-users-user-autoattendants-prompt',
   ),
   50 => 
   array (
@@ -600,6 +996,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'post_backup',
   ),
   51 => 
   array (
@@ -611,6 +1013,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'post_domains-domain-backup',
   ),
   52 => 
   array (
@@ -621,6 +1029,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'get_restore',
   ),
   53 => 
   array (
@@ -631,6 +1045,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_restore',
   ),
   54 => 
   array (
@@ -642,6 +1062,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-number-filters',
   ),
   55 => 
   array (
@@ -653,6 +1079,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-number-filters',
   ),
   56 => 
   array (
@@ -664,6 +1096,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-number-filters',
   ),
   57 => 
   array (
@@ -676,6 +1114,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-number-filters',
   ),
   58 => 
   array (
@@ -688,6 +1132,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-number-filters',
   ),
   59 => 
   array (
@@ -700,6 +1150,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-number-filters',
   ),
   60 => 
   array (
@@ -711,6 +1167,14 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-callqueuereport-abandoned',
   ),
   61 => 
   array (
@@ -723,6 +1187,14 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-callqueuereport-abandoned-callqueue',
   ),
   62 => 
   array (
@@ -734,6 +1206,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-dnis',
   ),
   63 => 
   array (
@@ -746,6 +1228,16 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-dnis-callqueues-callqueue',
   ),
   64 => 
   array (
@@ -757,6 +1249,17 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'department' => 'department',
+      'remove_zeros' => 'removeZeros',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-agent',
   ),
   65 => 
   array (
@@ -769,6 +1272,17 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+      'department' => 'department',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-agent-callqueues-callqueue',
   ),
   66 => 
   array (
@@ -781,6 +1295,16 @@ return array (
       'domain' => 'domain',
       'agent' => 'agent',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-agent-agent',
   ),
   67 => 
   array (
@@ -792,6 +1316,17 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+      'department' => 'department',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-agentlog',
   ),
   68 => 
   array (
@@ -803,6 +1338,17 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+      'queue_list' => 'queueList',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-callqueues-aggregate',
   ),
   69 => 
   array (
@@ -814,6 +1360,17 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+      'queue_list' => 'queueList',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-callqueues-per-queue',
   ),
   70 => 
   array (
@@ -826,6 +1383,17 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'fields' => 'fields',
+      'remove_zeros' => 'removeZeros',
+      'queue_list' => 'queueList',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-statistics-callqueues-callqueue',
   ),
   71 => 
   array (
@@ -837,6 +1405,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\CallQueue',
+    ),
+    'page' => 'readcallqueues',
   ),
   72 => 
   array (
@@ -848,6 +1426,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\CallQueue',
+    ),
+    'page' => 'createcallqueue',
   ),
   73 => 
   array (
@@ -859,6 +1447,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\CallQueue',
+    ),
+    'page' => 'listcallqueues',
   ),
   74 => 
   array (
@@ -871,6 +1469,16 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deletecallqueue',
   ),
   75 => 
   array (
@@ -883,6 +1491,16 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\CallQueue',
+    ),
+    'page' => 'readcallqueue',
   ),
   76 => 
   array (
@@ -895,6 +1513,16 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatecallqueue',
   ),
   77 => 
   array (
@@ -905,6 +1533,18 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'start_time' => 'startTime',
+      'end_time' => 'endTime',
+      'callids' => 'callids',
+      'servers' => 'servers',
+      'type' => 'type',
+      'download' => 'download',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getcalltrace',
   ),
   78 => 
   array (
@@ -915,6 +1555,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_calls-report',
   ),
   79 => 
   array (
@@ -926,6 +1572,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\ActiveCall',
+    ),
+    'page' => 'get_domains-domain-calls',
   ),
   80 => 
   array (
@@ -937,6 +1593,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-calls-count',
   ),
   81 => 
   array (
@@ -949,6 +1615,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\ActiveCall',
+    ),
+    'page' => 'get_domains-domain-users-user-calls',
   ),
   82 => 
   array (
@@ -961,6 +1637,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-calls',
   ),
   83 => 
   array (
@@ -974,6 +1656,12 @@ return array (
       'user' => 'user',
       'call_id' => 'callId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-calls-call-id',
   ),
   84 => 
   array (
@@ -987,6 +1675,16 @@ return array (
       'user' => 'user',
       'call_id' => 'callId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'patch_domains-domain-users-user-calls-call-id-answer',
   ),
   85 => 
   array (
@@ -1000,6 +1698,16 @@ return array (
       'user' => 'user',
       'call_id' => 'callId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'patch_domains-domain-users-user-calls-call-id-hold',
   ),
   86 => 
   array (
@@ -1013,6 +1721,12 @@ return array (
       'user' => 'user',
       'call_id' => 'callId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-calls-call-id-reject',
   ),
   87 => 
   array (
@@ -1026,6 +1740,16 @@ return array (
       'user' => 'user',
       'call_id' => 'callId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'patch_domains-domain-users-user-calls-call-id-transfer',
   ),
   88 => 
   array (
@@ -1039,6 +1763,16 @@ return array (
       'user' => 'user',
       'call_id' => 'callId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'patch_domains-domain-users-user-calls-call-id-transferpeer',
   ),
   89 => 
   array (
@@ -1052,6 +1786,16 @@ return array (
       'user' => 'user',
       'call_id' => 'callId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'patch_domains-domain-users-user-calls-call-id-unhold',
   ),
   90 => 
   array (
@@ -1065,6 +1809,16 @@ return array (
       'user' => 'user',
       'callid' => 'callid',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\ActiveCall',
+    ),
+    'page' => 'get_domains-domain-users-user-calls-callid',
   ),
   91 => 
   array (
@@ -1076,6 +1830,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-schedule-count',
   ),
   92 => 
   array (
@@ -1088,6 +1852,16 @@ return array (
       'domain' => 'domain',
       'schedule_name' => 'scheduleName',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-schedule-schedule-name-count',
   ),
   93 => 
   array (
@@ -1099,6 +1873,16 @@ return array (
     array (
       'reseller' => 'reseller',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_resellers-reseller-schedule-count',
   ),
   94 => 
   array (
@@ -1109,6 +1893,23 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'start' => 'start',
+      'limit' => 'limit',
+      'type' => 'type',
+      'orig_callid' => 'origCallid',
+      'term_callid' => 'termCallid',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Cdr',
+    ),
+    'page' => 'get_cdrs',
   ),
   95 => 
   array (
@@ -1119,6 +1920,19 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'type' => 'type',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_cdrs-count',
   ),
   96 => 
   array (
@@ -1130,6 +1944,25 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'site' => 'site',
+      'dialled' => 'dialled',
+      'caller' => 'caller',
+      'group' => 'group',
+      'start' => 'start',
+      'limit' => 'limit',
+      'type' => 'type',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Cdr',
+    ),
+    'page' => 'get_domains-domain-cdrs-1',
   ),
   97 => 
   array (
@@ -1141,6 +1974,19 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'type' => 'type',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-cdrs-count',
   ),
   98 => 
   array (
@@ -1153,6 +1999,17 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'start' => 'start',
+      'limit' => 'limit',
+      'type' => 'type',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-cdrs',
   ),
   99 => 
   array (
@@ -1165,6 +2022,19 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'datetime-start' => 'datetimeStart',
+      'datetime-end' => 'datetimeEnd',
+      'type' => 'type',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-users-user-cdrs-count',
   ),
   100 => 
   array (
@@ -1175,6 +2045,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_certificates',
   ),
   101 => 
   array (
@@ -1185,6 +2061,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_certificates',
   ),
   102 => 
   array (
@@ -1196,6 +2082,16 @@ return array (
     array (
       'name' => 'name',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_certificates-name',
   ),
   103 => 
   array (
@@ -1207,6 +2103,12 @@ return array (
     array (
       'name' => 'name',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_certificates-name',
   ),
   104 => 
   array (
@@ -1218,6 +2120,16 @@ return array (
     array (
       'name' => 'name',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_certificates-name',
   ),
   105 => 
   array (
@@ -1230,6 +2142,17 @@ return array (
       'domain' => 'domain',
       'dashboard_id' => 'dashboardId',
     ),
+    'query' => 
+    array (
+      'type' => 'type',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-charts-dashboard-id-count',
   ),
   106 => 
   array (
@@ -1242,6 +2165,12 @@ return array (
       'domain' => 'domain',
       'dashboard_id' => 'dashboardId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-charts-dashboard-id-list',
   ),
   107 => 
   array (
@@ -1254,6 +2183,12 @@ return array (
       'domain' => 'domain',
       'conference' => 'conference',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-conferences-conference-participants',
   ),
   108 => 
   array (
@@ -1266,6 +2201,12 @@ return array (
       'domain' => 'domain',
       'conference' => 'conference',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-conferences-conference-participants',
   ),
   109 => 
   array (
@@ -1279,6 +2220,12 @@ return array (
       'conference' => 'conference',
       'participant' => 'participant',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-conferences-conference-participants-participant',
   ),
   110 => 
   array (
@@ -1292,6 +2239,12 @@ return array (
       'conference' => 'conference',
       'participant' => 'participant',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-conferences-conference-participants-participant',
   ),
   111 => 
   array (
@@ -1303,6 +2256,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-conferences',
   ),
   112 => 
   array (
@@ -1314,6 +2273,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-conferences',
   ),
   113 => 
   array (
@@ -1325,6 +2290,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-conferences-count',
   ),
   114 => 
   array (
@@ -1337,6 +2312,12 @@ return array (
       'domain' => 'domain',
       'conference' => 'conference',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-conferences-conference',
   ),
   115 => 
   array (
@@ -1349,6 +2330,12 @@ return array (
       'domain' => 'domain',
       'conference' => 'conference',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-conferences-conference',
   ),
   116 => 
   array (
@@ -1361,6 +2348,12 @@ return array (
       'domain' => 'domain',
       'conference' => 'conference',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-conferences-conference',
   ),
   117 => 
   array (
@@ -1373,6 +2366,15 @@ return array (
       'domain' => 'domain',
       'conference' => 'conference',
     ),
+    'query' => 
+    array (
+      'from' => 'from',
+      'to' => 'to',
+      'include_participants' => 'includeParticipants',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-conferences-conference-cdr',
   ),
   118 => 
   array (
@@ -1383,6 +2385,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_config-definitions',
   ),
   119 => 
   array (
@@ -1393,6 +2401,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_config-definitions',
   ),
   120 => 
   array (
@@ -1404,6 +2418,12 @@ return array (
     array (
       'config-name' => 'configName',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_config-definitions-config-name',
   ),
   121 => 
   array (
@@ -1415,6 +2435,16 @@ return array (
     array (
       'config-name' => 'configName',
     ),
+    'query' => 
+    array (
+      'tags' => 'tags',
+      'start' => 'start',
+      'limit' => 'limit',
+      'sort' => 'sort',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_config-definitions-config-name',
   ),
   122 => 
   array (
@@ -1426,6 +2456,12 @@ return array (
     array (
       'config-name' => 'configName',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_config-definitions-config-name',
   ),
   123 => 
   array (
@@ -1436,6 +2472,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readallconfigurations',
   ),
   124 => 
   array (
@@ -1446,6 +2488,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createconfiguration',
   ),
   125 => 
   array (
@@ -1456,6 +2504,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updateconfiguration',
   ),
   126 => 
   array (
@@ -1466,6 +2520,24 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'hostname' => 'hostname',
+      'reseller' => 'reseller',
+      'domain' => 'domain',
+      'user' => 'user',
+      'role' => 'role',
+      'login_type' => 'loginType',
+      'config_name' => 'configName',
+      'include_wildcards' => 'includeWildcards',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_configurations-count',
   ),
   127 => 
   array (
@@ -1477,6 +2549,12 @@ return array (
     array (
       'config-name' => 'configName',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'deleteconfiguration',
   ),
   128 => 
   array (
@@ -1488,6 +2566,18 @@ return array (
     array (
       'config-name' => 'configName',
     ),
+    'query' => 
+    array (
+      'domain' => 'domain',
+      'reseller' => 'reseller',
+      'user' => 'user',
+      'core-server' => 'coreServer',
+      'user-scope' => 'userScope',
+      'admin-ui-account-type' => 'adminUiAccountType',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readspecificconfiguration',
   ),
   129 => 
   array (
@@ -1498,6 +2588,18 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'device-sip-registration-uri' => 'deviceSipRegistrationUri',
+      'termination-match' => 'terminationMatch',
+      'domain' => 'domain',
+      'reseller' => 'reseller',
+      'route-chain' => 'routeChain',
+      'user-scope' => 'userScope',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_connections',
   ),
   130 => 
   array (
@@ -1508,6 +2610,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createconnection',
   ),
   131 => 
   array (
@@ -1518,6 +2626,22 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'device-sip-registration-uri' => 'deviceSipRegistrationUri',
+      'termination-match' => 'terminationMatch',
+      'domain' => 'domain',
+      'reseller' => 'reseller',
+      'route-chain' => 'routeChain',
+      'user-scope' => 'userScope',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countallconnections',
   ),
   132 => 
   array (
@@ -1529,6 +2653,17 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'device-sip-registration-uri' => 'deviceSipRegistrationUri',
+      'termination-match' => 'terminationMatch',
+      'reseller' => 'reseller',
+      'route-chain' => 'routeChain',
+      'user-scope' => 'userScope',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-connections',
   ),
   133 => 
   array (
@@ -1541,6 +2676,12 @@ return array (
       'domain' => 'domain',
       'connection-id' => 'connectionId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-connections-connection-id',
   ),
   134 => 
   array (
@@ -1553,6 +2694,12 @@ return array (
       'domain' => 'domain',
       'connection-id' => 'connectionId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-connections-connection-id',
   ),
   135 => 
   array (
@@ -1565,6 +2712,12 @@ return array (
       'domain' => 'domain',
       'connection-orig-match-pattern' => 'connectionOrigMatchPattern',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updateconnection',
   ),
   136 => 
   array (
@@ -1577,6 +2730,13 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'includeDomain' => 'includedomain',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-contacts',
   ),
   137 => 
   array (
@@ -1589,6 +2749,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-contacts',
   ),
   138 => 
   array (
@@ -1601,6 +2767,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-users-user-contacts-count',
   ),
   139 => 
   array (
@@ -1614,6 +2790,12 @@ return array (
       'user' => 'user',
       'contact_id' => 'contactId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-contacts-contact-id',
   ),
   140 => 
   array (
@@ -1627,6 +2809,12 @@ return array (
       'user' => 'user',
       'contact_id' => 'contactId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-contacts-contact-id',
   ),
   141 => 
   array (
@@ -1640,6 +2828,16 @@ return array (
       'user' => 'user',
       'contact_id' => 'contactId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-users-user-contacts-contact-id',
   ),
   142 => 
   array (
@@ -1650,6 +2848,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-users-contacts',
   ),
   143 => 
   array (
@@ -1662,6 +2866,17 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'owner_id' => 'ownerId',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-users-user-dashboards-count',
   ),
   144 => 
   array (
@@ -1674,6 +2889,13 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'owner_id' => 'ownerId',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-dashboards-list',
   ),
   145 => 
   array (
@@ -1685,6 +2907,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-departments-list',
   ),
   146 => 
   array (
@@ -1696,6 +2924,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Device',
+    ),
+    'page' => 'getdomaindevices',
   ),
   147 => 
   array (
@@ -1707,6 +2945,18 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+      'start' => 'start',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-devices-count',
   ),
   148 => 
   array (
@@ -1719,6 +2969,18 @@ return array (
       'domain' => 'domain',
       'device' => 'device',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+      'start' => 'start',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-devices-device-count',
   ),
   149 => 
   array (
@@ -1731,6 +2993,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Device',
+    ),
+    'page' => 'getdevices',
   ),
   150 => 
   array (
@@ -1743,6 +3015,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Device',
+    ),
+    'page' => 'createdevice',
   ),
   151 => 
   array (
@@ -1755,6 +3037,18 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+      'start' => 'start',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countdevices',
   ),
   152 => 
   array (
@@ -1768,6 +3062,16 @@ return array (
       'user' => 'user',
       'device' => 'device',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deletedevice',
   ),
   153 => 
   array (
@@ -1781,6 +3085,16 @@ return array (
       'user' => 'user',
       'device' => 'device',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Device',
+    ),
+    'page' => 'getdevice',
   ),
   154 => 
   array (
@@ -1794,6 +3108,16 @@ return array (
       'user' => 'user',
       'device' => 'device',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatedevice',
   ),
   155 => 
   array (
@@ -1805,6 +3129,18 @@ return array (
     array (
       'reseller' => 'reseller',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+      'start' => 'start',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_resellers-reseller-devices-count',
   ),
   156 => 
   array (
@@ -1815,6 +3151,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_dialpolicy',
   ),
   157 => 
   array (
@@ -1825,6 +3167,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_dialpolicy',
   ),
   158 => 
   array (
@@ -1836,6 +3184,16 @@ return array (
     array (
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_dialpolicy-policy',
   ),
   159 => 
   array (
@@ -1847,6 +3205,12 @@ return array (
     array (
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_dialpolicy-policy',
   ),
   160 => 
   array (
@@ -1858,6 +3222,16 @@ return array (
     array (
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_dialpolicy-policy',
   ),
   161 => 
   array (
@@ -1869,6 +3243,12 @@ return array (
     array (
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_dialpolicy-policy-permission',
   ),
   162 => 
   array (
@@ -1880,6 +3260,12 @@ return array (
     array (
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createpermission',
   ),
   163 => 
   array (
@@ -1892,6 +3278,12 @@ return array (
       'policy' => 'policy',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletepermission',
   ),
   164 => 
   array (
@@ -1904,6 +3296,12 @@ return array (
       'policy' => 'policy',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readpermission',
   ),
   165 => 
   array (
@@ -1916,6 +3314,16 @@ return array (
       'policy' => 'policy',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatepermission',
   ),
   166 => 
   array (
@@ -1928,6 +3336,16 @@ return array (
       'domain' => 'domain',
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_domains-domain-dialpolicy-policy',
   ),
   167 => 
   array (
@@ -1940,6 +3358,12 @@ return array (
       'domain' => 'domain',
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-dialpolicy-policy',
   ),
   168 => 
   array (
@@ -1952,6 +3376,16 @@ return array (
       'domain' => 'domain',
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-dialpolicy-policy',
   ),
   169 => 
   array (
@@ -1964,6 +3398,12 @@ return array (
       'domain' => 'domain',
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-dialpolicy-policy-permission',
   ),
   170 => 
   array (
@@ -1976,6 +3416,12 @@ return array (
       'domain' => 'domain',
       'policy' => 'policy',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createpermissiondomain',
   ),
   171 => 
   array (
@@ -1989,6 +3435,12 @@ return array (
       'policy' => 'policy',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletepermissiondomain',
   ),
   172 => 
   array (
@@ -2002,6 +3454,12 @@ return array (
       'policy' => 'policy',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readpermissiondomain',
   ),
   173 => 
   array (
@@ -2015,6 +3473,16 @@ return array (
       'policy' => 'policy',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatepermissiondomain',
   ),
   174 => 
   array (
@@ -2025,6 +3493,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_dialplans',
   ),
   175 => 
   array (
@@ -2035,6 +3509,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_dialplans',
   ),
   176 => 
   array (
@@ -2046,6 +3530,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_domains-domain-dialplans',
   ),
   177 => 
   array (
@@ -2058,6 +3552,16 @@ return array (
       'domain' => 'domain',
       'dialplan' => 'dialplan',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_domains-domain-dialplans-dialplan',
   ),
   178 => 
   array (
@@ -2070,6 +3574,16 @@ return array (
       'domain' => 'domain',
       'dialplan' => 'dialplan',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-dialplans-dialplan',
   ),
   179 => 
   array (
@@ -2082,6 +3596,12 @@ return array (
       'domain' => 'domain',
       'dialplan' => 'dialplan',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readdialrules',
   ),
   180 => 
   array (
@@ -2094,6 +3614,12 @@ return array (
       'domain' => 'domain',
       'dialplan' => 'dialplan',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createdialrule',
   ),
   181 => 
   array (
@@ -2106,6 +3632,16 @@ return array (
       'domain' => 'domain',
       'dialplan' => 'dialplan',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-dialplans-dialplan-dialrules-count',
   ),
   182 => 
   array (
@@ -2119,6 +3655,12 @@ return array (
       'dialplan' => 'dialplan',
       'dialrule' => 'dialrule',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletedialrule',
   ),
   183 => 
   array (
@@ -2132,6 +3674,12 @@ return array (
       'dialplan' => 'dialplan',
       'dialrule' => 'dialrule',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readdialrule',
   ),
   184 => 
   array (
@@ -2145,6 +3693,16 @@ return array (
       'dialplan' => 'dialplan',
       'dialrule' => 'dialrule',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatedialrule',
   ),
   185 => 
   array (
@@ -2155,6 +3713,18 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'start' => 'start',
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Domain',
+    ),
+    'page' => 'getdomains',
   ),
   186 => 
   array (
@@ -2165,6 +3735,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Domain',
+    ),
+    'page' => 'createdomain',
   ),
   187 => 
   array (
@@ -2175,6 +3755,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countdomains',
   ),
   188 => 
   array (
@@ -2186,6 +3776,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletedomain',
   ),
   189 => 
   array (
@@ -2197,6 +3793,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getdomain',
   ),
   190 => 
   array (
@@ -2208,6 +3810,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatedomain',
   ),
   191 => 
   array (
@@ -2219,6 +3831,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Domain',
+    ),
+    'page' => 'domainbilling',
   ),
   192 => 
   array (
@@ -2230,6 +3852,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countdomain',
   ),
   193 => 
   array (
@@ -2240,6 +3872,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Domain',
+    ),
+    'page' => 'getmydomain',
   ),
   194 => 
   array (
@@ -2252,6 +3894,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'sendemail-1',
   ),
   195 => 
   array (
@@ -2265,6 +3913,12 @@ return array (
       'user' => 'user',
       'token' => 'token',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'verifyemail',
   ),
   196 => 
   array (
@@ -2275,6 +3929,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_firebase',
   ),
   197 => 
   array (
@@ -2285,6 +3945,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_firebase',
   ),
   198 => 
   array (
@@ -2297,6 +3963,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readgreetings',
   ),
   199 => 
   array (
@@ -2309,6 +3981,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'creategreetingbase64',
   ),
   200 => 
   array (
@@ -2321,6 +4003,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-greetings-count',
   ),
   201 => 
   array (
@@ -2334,6 +4022,16 @@ return array (
       'user' => 'user',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deletegreeting',
   ),
   202 => 
   array (
@@ -2347,6 +4045,12 @@ return array (
       'user' => 'user',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readgreeting',
   ),
   203 => 
   array (
@@ -2360,6 +4064,12 @@ return array (
       'user' => 'user',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updategreetingtts',
   ),
   204 => 
   array (
@@ -2371,6 +4081,12 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'deleteimage',
   ),
   205 => 
   array (
@@ -2382,6 +4098,15 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+      'reseller' => 'reseller',
+      'domain' => 'domain',
+      'server' => 'server',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readimage',
   ),
   206 => 
   array (
@@ -2393,6 +4118,12 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createimagebase64',
   ),
   207 => 
   array (
@@ -2404,6 +4135,12 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'multipart',
+    'returns' => NULL,
+    'page' => 'updateimagefileupload',
   ),
   208 => 
   array (
@@ -2415,6 +4152,18 @@ return array (
     array (
       'label' => 'label',
     ),
+    'query' => 
+    array (
+      'range' => 'range',
+      'aggregated' => 'aggregated',
+      'start' => 'start',
+      'end' => 'end',
+      'step' => 'step',
+      'query' => 'query',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_insight-label',
   ),
   209 => 
   array (
@@ -2427,6 +4176,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-host',
   ),
   210 => 
   array (
@@ -2439,6 +4194,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-host',
   ),
   211 => 
   array (
@@ -2451,6 +4212,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-users-user-host',
   ),
   212 => 
   array (
@@ -2463,6 +4230,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-host-contacts',
   ),
   213 => 
   array (
@@ -2475,6 +4248,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-video',
   ),
   214 => 
   array (
@@ -2487,6 +4266,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-video-conference',
   ),
   215 => 
   array (
@@ -2499,6 +4284,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-video-conference',
   ),
   216 => 
   array (
@@ -2511,6 +4302,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-video-contacts',
   ),
   217 => 
   array (
@@ -2522,6 +4319,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-video',
   ),
   218 => 
   array (
@@ -2533,6 +4336,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-video',
   ),
   219 => 
   array (
@@ -2544,6 +4353,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-video',
   ),
   220 => 
   array (
@@ -2555,6 +4370,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-video',
   ),
   221 => 
   array (
@@ -2566,6 +4387,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-video-availableproducts',
   ),
   222 => 
   array (
@@ -2577,6 +4404,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-video-hosts',
   ),
   223 => 
   array (
@@ -2588,6 +4421,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-video-products',
   ),
   224 => 
   array (
@@ -2600,6 +4439,12 @@ return array (
       'domain' => 'domain',
       'slug' => 'slug',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-video-subscription-slug',
   ),
   225 => 
   array (
@@ -2612,6 +4457,12 @@ return array (
       'domain' => 'domain',
       'slug' => 'slug',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-video-subscription-slug',
   ),
   226 => 
   array (
@@ -2623,6 +4474,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-video-subscriptions',
   ),
   227 => 
   array (
@@ -2633,6 +4490,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_video-resellers',
   ),
   228 => 
   array (
@@ -2643,6 +4506,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'revokemyjwt',
   ),
   229 => 
   array (
@@ -2653,6 +4526,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_jwt',
   ),
   230 => 
   array (
@@ -2663,6 +4542,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\JwtToken',
+    ),
+    'page' => 'post_jwt',
   ),
   231 => 
   array (
@@ -2674,6 +4563,12 @@ return array (
     array (
       'jti' => 'jti',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'revokejwtbyjti',
   ),
   232 => 
   array (
@@ -2685,6 +4580,12 @@ return array (
     array (
       'uid' => 'uid',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'revokejwtbyuid',
   ),
   233 => 
   array (
@@ -2696,6 +4597,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readmsgdomain',
   ),
   234 => 
   array (
@@ -2707,6 +4614,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'multipart',
+    'returns' => NULL,
+    'page' => 'createmsgdomainfileupload',
   ),
   235 => 
   array (
@@ -2718,6 +4631,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-msg-count',
   ),
   236 => 
   array (
@@ -2730,6 +4649,12 @@ return array (
       'domain' => 'domain',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletemsgdomain',
   ),
   237 => 
   array (
@@ -2742,6 +4667,12 @@ return array (
       'domain' => 'domain',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'multipart',
+    'returns' => NULL,
+    'page' => 'updatemsgdomainfileupload',
   ),
   238 => 
   array (
@@ -2754,6 +4685,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readmsguser',
   ),
   239 => 
   array (
@@ -2766,6 +4703,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'multipart',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-msg',
   ),
   240 => 
   array (
@@ -2778,6 +4721,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'countmsguser',
   ),
   241 => 
   array (
@@ -2791,6 +4740,12 @@ return array (
       'user' => 'user',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletemsguser',
   ),
   242 => 
   array (
@@ -2804,6 +4759,12 @@ return array (
       'user' => 'user',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'multipart',
+    'returns' => NULL,
+    'page' => 'updatemsguserfileupload',
   ),
   243 => 
   array (
@@ -2815,6 +4776,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readmohdomain',
   ),
   244 => 
   array (
@@ -2826,6 +4793,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'createmohdomainbase64',
   ),
   245 => 
   array (
@@ -2837,6 +4814,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-moh-count',
   ),
   246 => 
   array (
@@ -2849,6 +4832,12 @@ return array (
       'domain' => 'domain',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletemohdomain',
   ),
   247 => 
   array (
@@ -2861,6 +4850,12 @@ return array (
       'domain' => 'domain',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updatemohdomaintts',
   ),
   248 => 
   array (
@@ -2873,6 +4868,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readmohuser',
   ),
   249 => 
   array (
@@ -2885,6 +4886,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'createmohuserbase64',
   ),
   250 => 
   array (
@@ -2897,6 +4908,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-moh-count',
   ),
   251 => 
   array (
@@ -2910,6 +4927,12 @@ return array (
       'user' => 'user',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletemohuser',
   ),
   252 => 
   array (
@@ -2923,6 +4946,12 @@ return array (
       'user' => 'user',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updatemohusertts',
   ),
   253 => 
   array (
@@ -2937,6 +4966,12 @@ return array (
       'id' => 'id',
       'instance' => 'instance',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-meetings-id-instance-instance-log',
   ),
   254 => 
   array (
@@ -2951,6 +4986,12 @@ return array (
       'id' => 'id',
       'instance' => 'instance',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-meetings-id-instance-instance-log',
   ),
   255 => 
   array (
@@ -2963,6 +5004,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-meetings',
   ),
   256 => 
   array (
@@ -2975,6 +5022,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-meetings',
   ),
   257 => 
   array (
@@ -2987,6 +5040,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-users-user-meetings-count',
   ),
   258 => 
   array (
@@ -2999,6 +5062,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-meetings-getid',
   ),
   259 => 
   array (
@@ -3012,6 +5081,12 @@ return array (
       'user' => 'user',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-meetings-id',
   ),
   260 => 
   array (
@@ -3025,6 +5100,12 @@ return array (
       'user' => 'user',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-meetings-id',
   ),
   261 => 
   array (
@@ -3038,6 +5119,16 @@ return array (
       'user' => 'user',
       'meeting_id' => 'meetingId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-users-user-meetings-meeting-id-count',
   ),
   262 => 
   array (
@@ -3051,6 +5142,12 @@ return array (
       'user' => 'user',
       'meeting' => 'meeting',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-meetings-meeting',
   ),
   263 => 
   array (
@@ -3064,6 +5161,12 @@ return array (
       'user' => 'user',
       'meeting' => 'meeting',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-users-user-meetings-meeting',
   ),
   264 => 
   array (
@@ -3075,6 +5178,12 @@ return array (
     array (
       'meeting_registration_id' => 'meetingRegistrationId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_meetings-register-meeting-registration-id',
   ),
   265 => 
   array (
@@ -3086,6 +5195,13 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getmessagesessionsfordomain',
   ),
   266 => 
   array (
@@ -3098,6 +5214,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Message',
+    ),
+    'page' => 'startsession',
   ),
   267 => 
   array (
@@ -3110,6 +5236,13 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getmessagesessionsforuser',
   ),
   268 => 
   array (
@@ -3123,6 +5256,12 @@ return array (
       'user' => 'user',
       'messagesession' => 'messagesession',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletemessagesession',
   ),
   269 => 
   array (
@@ -3136,6 +5275,12 @@ return array (
       'user' => 'user',
       'messagesession' => 'messagesession',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getmessagesessionforuser',
   ),
   270 => 
   array (
@@ -3149,6 +5294,12 @@ return array (
       'user' => 'user',
       'messagesession' => 'messagesession',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updatemessagesessionparticipants',
   ),
   271 => 
   array (
@@ -3162,6 +5313,12 @@ return array (
       'user' => 'user',
       'messagesession' => 'messagesession',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'leavemessagesession',
   ),
   272 => 
   array (
@@ -3175,6 +5332,17 @@ return array (
       'user' => 'user',
       'messagesession' => 'messagesession',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Message',
+    ),
+    'page' => 'getmessagesformessagesession',
   ),
   273 => 
   array (
@@ -3188,6 +5356,12 @@ return array (
       'user' => 'user',
       'messagesession' => 'messagesession',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'sendmessagechat',
   ),
   274 => 
   array (
@@ -3198,6 +5372,14 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'brand' => 'brand',
+      'model' => 'model',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getspecificmodel',
   ),
   275 => 
   array (
@@ -3208,6 +5390,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getprovisionableservers',
   ),
   276 => 
   array (
@@ -3219,6 +5407,12 @@ return array (
     array (
       'server' => 'server',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getprovisionableserver',
   ),
   277 => 
   array (
@@ -3230,6 +5424,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatephonenumberqueue',
   ),
   278 => 
   array (
@@ -3241,6 +5445,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\PhoneNumber',
+    ),
+    'page' => 'getdomainphonenumbers',
   ),
   279 => 
   array (
@@ -3252,6 +5466,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'createphonenumber',
   ),
   280 => 
   array (
@@ -3263,6 +5487,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countdomainphonenumbers',
   ),
   281 => 
   array (
@@ -3275,6 +5509,16 @@ return array (
       'domain' => 'domain',
       'phonenumber' => 'phonenumber',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deletephonenumber',
   ),
   282 => 
   array (
@@ -3287,6 +5531,16 @@ return array (
       'domain' => 'domain',
       'phonenumber' => 'phonenumber',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\PhoneNumber',
+    ),
+    'page' => 'getphonenumber',
   ),
   283 => 
   array (
@@ -3299,6 +5553,16 @@ return array (
       'domain' => 'domain',
       'phonenumber' => 'phonenumber',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatephonenumber',
   ),
   284 => 
   array (
@@ -3309,6 +5573,18 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'start' => 'start',
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\PhoneNumber',
+    ),
+    'page' => 'getphonenumbers',
   ),
   285 => 
   array (
@@ -3319,6 +5595,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countphonenumbers',
   ),
   286 => 
   array (
@@ -3330,6 +5616,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-phonetemplates',
   ),
   287 => 
   array (
@@ -3341,6 +5633,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_domains-domain-phonetemplates',
   ),
   288 => 
   array (
@@ -3352,6 +5654,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-phonetemplates-count',
   ),
   289 => 
   array (
@@ -3364,6 +5676,16 @@ return array (
       'domain' => 'domain',
       'name' => 'name',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_domains-domain-phonetemplates-name',
   ),
   290 => 
   array (
@@ -3376,6 +5698,12 @@ return array (
       'domain' => 'domain',
       'name' => 'name',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-phonetemplates-name',
   ),
   291 => 
   array (
@@ -3388,6 +5716,16 @@ return array (
       'domain' => 'domain',
       'name' => 'name',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-phonetemplates-name',
   ),
   292 => 
   array (
@@ -3399,6 +5737,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_domains-domain-phones',
   ),
   293 => 
   array (
@@ -3410,6 +5758,13 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-phones',
   ),
   294 => 
   array (
@@ -3421,6 +5776,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_domains-domain-phones',
   ),
   295 => 
   array (
@@ -3432,6 +5797,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-phones',
   ),
   296 => 
   array (
@@ -3444,6 +5819,13 @@ return array (
       'domain' => 'domain',
       'mac' => 'mac',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-phones-mac',
   ),
   297 => 
   array (
@@ -3454,6 +5836,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_phones',
   ),
   298 => 
   array (
@@ -3464,6 +5856,13 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_phones',
   ),
   299 => 
   array (
@@ -3474,6 +5873,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_phones',
   ),
   300 => 
   array (
@@ -3484,6 +5893,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_phones',
   ),
   301 => 
   array (
@@ -3494,6 +5913,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_phones-count',
   ),
   302 => 
   array (
@@ -3505,6 +5934,12 @@ return array (
     array (
       'mac' => 'mac',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_phones-mac',
   ),
   303 => 
   array (
@@ -3517,6 +5952,15 @@ return array (
       'domain' => 'domain',
       'department' => 'department',
     ),
+    'query' => 
+    array (
+      'last_update' => 'lastUpdate',
+      'limit' => 'limit',
+      'order' => 'order',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-departments-department-presence-list',
   ),
   304 => 
   array (
@@ -3528,6 +5972,15 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'last_update' => 'lastUpdate',
+      'limit' => 'limit',
+      'order' => 'order',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-presence-list',
   ),
   305 => 
   array (
@@ -3540,6 +5993,12 @@ return array (
       'domain' => 'domain',
       'callqueue' => 'callqueue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-queuedcall-callqueue',
   ),
   306 => 
   array (
@@ -3552,6 +6011,12 @@ return array (
       'domain' => 'domain',
       'queue' => 'queue',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-queuedcall-queue',
   ),
   307 => 
   array (
@@ -3563,6 +6028,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-quotas',
   ),
   308 => 
   array (
@@ -3574,6 +6045,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-quotas-count',
   ),
   309 => 
   array (
@@ -3585,6 +6066,12 @@ return array (
     array (
       'reseller' => 'reseller',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_resellers-reseller-quotas',
   ),
   310 => 
   array (
@@ -3596,6 +6083,16 @@ return array (
     array (
       'reseller' => 'reseller',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_resellers-reseller-quotas-count',
   ),
   311 => 
   array (
@@ -3608,6 +6105,12 @@ return array (
       'domain' => 'domain',
       'callid' => 'callid',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-recordings-callid',
   ),
   312 => 
   array (
@@ -3621,6 +6124,12 @@ return array (
       'user' => 'user',
       'callid' => 'callid',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-recordings-callid',
   ),
   313 => 
   array (
@@ -3631,6 +6140,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Reseller',
+    ),
+    'page' => 'getresellers',
   ),
   314 => 
   array (
@@ -3641,6 +6160,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createreseller',
   ),
   315 => 
   array (
@@ -3651,6 +6176,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_resellers-count',
   ),
   316 => 
   array (
@@ -3662,6 +6197,12 @@ return array (
     array (
       'reseller' => 'reseller',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletereseller',
   ),
   317 => 
   array (
@@ -3673,6 +6214,16 @@ return array (
     array (
       'reseller' => 'reseller',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Reseller',
+    ),
+    'page' => 'getreseller',
   ),
   318 => 
   array (
@@ -3684,6 +6235,12 @@ return array (
     array (
       'reseller' => 'reseller',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updatereseller',
   ),
   319 => 
   array (
@@ -3694,6 +6251,17 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'route-destination-match-pattern' => 'routeDestinationMatchPattern',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_routecon-count',
   ),
   320 => 
   array (
@@ -3704,6 +6272,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'route-destination-match-pattern' => 'routeDestinationMatchPattern',
+      'route-source-match-pattern' => 'routeSourceMatchPattern',
+      'route-class' => 'routeClass',
+      'route-match-server-hostname' => 'routeMatchServerHostname',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getroutes',
   ),
   321 => 
   array (
@@ -3714,6 +6292,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_routes',
   ),
   322 => 
   array (
@@ -3724,6 +6312,18 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+      'forward_request_matchrule' => 'forwardRequestMatchrule',
+      'route-source-match-pattern' => 'routeSourceMatchPattern',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countroutes',
   ),
   323 => 
   array (
@@ -3735,6 +6335,16 @@ return array (
     array (
       'route-id' => 'routeId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deleteroute',
   ),
   324 => 
   array (
@@ -3746,6 +6356,12 @@ return array (
     array (
       'route-id' => 'routeId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_routes-route-id',
   ),
   325 => 
   array (
@@ -3757,6 +6373,12 @@ return array (
     array (
       'route-id' => 'routeId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_routes-route-id-routecon',
   ),
   326 => 
   array (
@@ -3768,6 +6390,16 @@ return array (
     array (
       'route-id' => 'routeId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_routes-route-id-routecon',
   ),
   327 => 
   array (
@@ -3780,6 +6412,16 @@ return array (
       'route-id' => 'routeId',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deleteroutecon',
   ),
   328 => 
   array (
@@ -3792,6 +6434,12 @@ return array (
       'route-id' => 'routeId',
       'index' => 'index',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_routes-route-id-routecon-index',
   ),
   329 => 
   array (
@@ -3803,6 +6451,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-contacts',
   ),
   330 => 
   array (
@@ -3814,6 +6468,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-contacts',
   ),
   331 => 
   array (
@@ -3826,6 +6486,12 @@ return array (
       'domain' => 'domain',
       'contact_id' => 'contactId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-contacts-contact-id',
   ),
   332 => 
   array (
@@ -3838,6 +6504,12 @@ return array (
       'domain' => 'domain',
       'contact_id' => 'contactId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-contacts-contact-id',
   ),
   333 => 
   array (
@@ -3850,6 +6522,12 @@ return array (
       'domain' => 'domain',
       'contact_id' => 'contactId',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-contacts-contact-id',
   ),
   334 => 
   array (
@@ -3861,6 +6539,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-sites',
   ),
   335 => 
   array (
@@ -3872,6 +6556,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_domains-domain-sites',
   ),
   336 => 
   array (
@@ -3883,6 +6577,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-sites-count',
   ),
   337 => 
   array (
@@ -3894,6 +6598,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-sites-list',
   ),
   338 => 
   array (
@@ -3906,6 +6616,12 @@ return array (
       'domain' => 'domain',
       'site' => 'site',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-sites-site',
   ),
   339 => 
   array (
@@ -3918,6 +6634,16 @@ return array (
       'domain' => 'domain',
       'site' => 'site',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-sites-site',
   ),
   340 => 
   array (
@@ -3929,6 +6655,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-smsblocks',
   ),
   341 => 
   array (
@@ -3940,6 +6672,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_domains-domain-smsblocks',
   ),
   342 => 
   array (
@@ -3952,6 +6694,16 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_domains-domain-smsblocks-id',
   ),
   343 => 
   array (
@@ -3964,6 +6716,16 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-smsblocks-id',
   ),
   344 => 
   array (
@@ -3974,6 +6736,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_smsblocks',
   ),
   345 => 
   array (
@@ -3985,6 +6753,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getsmsnumbersfordomain',
   ),
   346 => 
   array (
@@ -3996,6 +6770,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createsmsnumber',
   ),
   347 => 
   array (
@@ -4008,6 +6788,12 @@ return array (
       'domain' => 'domain',
       'smsnumber' => 'smsnumber',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletesmsnumber',
   ),
   348 => 
   array (
@@ -4020,6 +6806,12 @@ return array (
       'domain' => 'domain',
       'smsnumber' => 'smsnumber',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updatesmsnumber',
   ),
   349 => 
   array (
@@ -4032,6 +6824,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getsmsnumbersforuser',
   ),
   350 => 
   array (
@@ -4044,6 +6842,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countsmsnumbers',
   ),
   351 => 
   array (
@@ -4054,6 +6862,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'getallsmsnumberssystem',
   ),
   352 => 
   array (
@@ -4064,6 +6878,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_deviceprofiles',
   ),
   353 => 
   array (
@@ -4074,6 +6894,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_deviceprofiles-count',
   ),
   354 => 
   array (
@@ -4086,6 +6916,12 @@ return array (
       'make' => 'make',
       'model' => 'model',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_deviceprofiles-make-model',
   ),
   355 => 
   array (
@@ -4097,6 +6933,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'post_domains-domain-phoneconfiguration',
   ),
   356 => 
   array (
@@ -4108,6 +6954,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-phoneconfiguration-count',
   ),
   357 => 
   array (
@@ -4120,6 +6976,16 @@ return array (
       'domain' => 'domain',
       'mac' => 'mac',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'delete_domains-domain-phoneconfiguration-mac',
   ),
   358 => 
   array (
@@ -4132,6 +6998,12 @@ return array (
       'domain' => 'domain',
       'mac' => 'mac',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-phoneconfiguration-mac',
   ),
   359 => 
   array (
@@ -4144,6 +7016,16 @@ return array (
       'domain' => 'domain',
       'mac' => 'mac',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'put_domains-domain-phoneconfiguration-mac',
   ),
   360 => 
   array (
@@ -4155,6 +7037,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Subscription',
+    ),
+    'page' => 'readsubscriptionsdomain',
   ),
   361 => 
   array (
@@ -4166,6 +7058,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createsubscriptiondomain',
   ),
   362 => 
   array (
@@ -4178,6 +7076,16 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deletesubscriptiondomain',
   ),
   363 => 
   array (
@@ -4190,6 +7098,16 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatesubscriptiondomain',
   ),
   364 => 
   array (
@@ -4200,6 +7118,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\Subscription',
+    ),
+    'page' => 'readsubscriptions',
   ),
   365 => 
   array (
@@ -4210,6 +7138,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createsubscription',
   ),
   366 => 
   array (
@@ -4221,6 +7155,16 @@ return array (
     array (
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'deletesubscription',
   ),
   367 => 
   array (
@@ -4232,6 +7176,16 @@ return array (
     array (
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Subscription',
+    ),
+    'page' => 'readsubscription',
   ),
   368 => 
   array (
@@ -4243,6 +7197,16 @@ return array (
     array (
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\SuccessResponse',
+    ),
+    'page' => 'updatesubscription',
   ),
   369 => 
   array (
@@ -4254,6 +7218,12 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'deletetemplate',
   ),
   370 => 
   array (
@@ -4265,6 +7235,15 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+      'reseller' => 'reseller',
+      'domain' => 'domain',
+      'server' => 'server',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readtemplate',
   ),
   371 => 
   array (
@@ -4276,6 +7255,12 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'createtemplatebase64',
   ),
   372 => 
   array (
@@ -4287,6 +7272,12 @@ return array (
     array (
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updatetemplatebase64',
   ),
   373 => 
   array (
@@ -4299,6 +7290,13 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+      'script' => 'script',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-voices',
   ),
   374 => 
   array (
@@ -4311,6 +7309,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-voices',
   ),
   375 => 
   array (
@@ -4324,6 +7328,16 @@ return array (
       'user' => 'user',
       'language' => 'language',
     ),
+    'query' => 
+    array (
+      'gender' => 'gender',
+      'vendor' => 'vendor',
+      'id' => 'id',
+      'name' => 'name',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-voices-language',
   ),
   376 => 
   array (
@@ -4335,6 +7349,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-timeframes',
   ),
   377 => 
   array (
@@ -4347,6 +7367,12 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-timeframes-id',
   ),
   378 => 
   array (
@@ -4358,6 +7384,12 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-timeframes',
   ),
   379 => 
   array (
@@ -4370,6 +7402,12 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-timeframes-id-1',
   ),
   380 => 
   array (
@@ -4382,6 +7420,12 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-timeframes-id-1',
   ),
   381 => 
   array (
@@ -4394,6 +7438,12 @@ return array (
       'domain' => 'domain',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-timeframes-id-1',
   ),
   382 => 
   array (
@@ -4404,6 +7454,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_holidays-countries',
   ),
   383 => 
   array (
@@ -4414,6 +7470,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_holidays-regions',
   ),
   384 => 
   array (
@@ -4427,6 +7489,13 @@ return array (
       'region' => 'region',
       'year' => 'year',
     ),
+    'query' => 
+    array (
+      'language' => 'language',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_holidays-country-region-year',
   ),
   385 => 
   array (
@@ -4439,6 +7508,13 @@ return array (
       'country' => 'country',
       'year' => 'year',
     ),
+    'query' => 
+    array (
+      'language' => 'language',
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'get_holidays-country-year',
   ),
   386 => 
   array (
@@ -4449,6 +7525,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_',
   ),
   387 => 
   array (
@@ -4461,6 +7543,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-timeframes',
   ),
   388 => 
   array (
@@ -4474,6 +7562,12 @@ return array (
       'user' => 'user',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-timeframes-id',
   ),
   389 => 
   array (
@@ -4486,6 +7580,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-timeframes',
   ),
   390 => 
   array (
@@ -4499,6 +7599,12 @@ return array (
       'user' => 'user',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-timeframes-id-1',
   ),
   391 => 
   array (
@@ -4512,6 +7618,12 @@ return array (
       'user' => 'user',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-timeframes-id-1',
   ),
   392 => 
   array (
@@ -4525,6 +7637,12 @@ return array (
       'user' => 'user',
       'id' => 'id',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-users-user-timeframes-id-1',
   ),
   393 => 
   array (
@@ -4536,6 +7654,18 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'id' => 'id',
+      'date' => 'date',
+      'callid' => 'callid',
+      'orig_callid' => 'origCallid',
+      'term_callid' => 'termCallid',
+      'by_callid' => 'byCallid',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-transcriptions',
   ),
   394 => 
   array (
@@ -4547,6 +7677,19 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'limit' => 'limit',
+      'start' => 'start',
+      'site' => 'site',
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'many',
+      1 => 'Simtabi\\NetSapiens\\Data\\User',
+    ),
+    'page' => 'getusers',
   ),
   395 => 
   array (
@@ -4558,6 +7701,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\User',
+    ),
+    'page' => 'createuser',
   ),
   396 => 
   array (
@@ -4569,6 +7722,16 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'countusers',
   ),
   397 => 
   array (
@@ -4580,6 +7743,13 @@ return array (
     array (
       'domain' => 'domain',
     ),
+    'query' => 
+    array (
+      'fields' => 'fields',
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'listusers',
   ),
   398 => 
   array (
@@ -4592,6 +7762,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deleteuser',
   ),
   399 => 
   array (
@@ -4604,6 +7780,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\User',
+    ),
+    'page' => 'getuser',
   ),
   400 => 
   array (
@@ -4616,6 +7802,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'updateuser',
   ),
   401 => 
   array (
@@ -4626,6 +7818,16 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\User',
+    ),
+    'page' => 'getmyuser',
   ),
   402 => 
   array (
@@ -4636,6 +7838,12 @@ return array (
     'params' => 
     array (
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'version-2',
   ),
   403 => 
   array (
@@ -4648,6 +7856,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'delete_domains-domain-users-user-vmailnag',
   ),
   404 => 
   array (
@@ -4660,6 +7874,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-vmailnag',
   ),
   405 => 
   array (
@@ -4672,6 +7892,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'post_domains-domain-users-user-vmailnag',
   ),
   406 => 
   array (
@@ -4684,6 +7910,12 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'put_domains-domain-users-user-vmailnag',
   ),
   407 => 
   array (
@@ -4696,6 +7928,16 @@ return array (
       'domain' => 'domain',
       'user' => 'user',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => 
+    array (
+      0 => 'one',
+      1 => 'Simtabi\\NetSapiens\\Data\\Count',
+    ),
+    'page' => 'get_domains-domain-users-user-vmailnag-count',
   ),
   408 => 
   array (
@@ -4709,6 +7951,12 @@ return array (
       'user' => 'user',
       'folder' => 'folder',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readvoicemails',
   ),
   409 => 
   array (
@@ -4722,6 +7970,12 @@ return array (
       'user' => 'user',
       'folder' => 'folder',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'get_domains-domain-users-user-voicemails-folder-count',
   ),
   410 => 
   array (
@@ -4736,6 +7990,12 @@ return array (
       'folder' => 'folder',
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'deletevoicemail',
   ),
   411 => 
   array (
@@ -4750,6 +8010,12 @@ return array (
       'folder' => 'folder',
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'readvoicemail',
   ),
   412 => 
   array (
@@ -4764,6 +8030,12 @@ return array (
       'folder' => 'folder',
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => 'json',
+    'returns' => NULL,
+    'page' => 'forwardvoicemail',
   ),
   413 => 
   array (
@@ -4778,5 +8050,11 @@ return array (
       'folder' => 'folder',
       'filename' => 'filename',
     ),
+    'query' => 
+    array (
+    ),
+    'body' => NULL,
+    'returns' => NULL,
+    'page' => 'savevoicemail',
   ),
 );

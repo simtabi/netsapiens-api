@@ -4,6 +4,8 @@ All notable changes to `simtabi/netsapiens-api` are documented in this file.
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-21
+
 ### Added
 
 - **A client for the NetSapiens API v2**, `Simtabi\NetSapiens\Client`, covering all 414 operations
@@ -42,6 +44,19 @@ All notable changes to `simtabi/netsapiens-api` are documented in this file.
   `HasHelperFunctions` traits, and the `netSapiensClient()` helper. docs.ns-api.com no longer
   documents the v1 API. Everything still works, and each class names its v2 replacement.
 
+### Security
+
+- **The v1 client verifies TLS certificates by default.** It used to turn verification off
+  unless the caller turned it on, which exposed the bearer token to anyone on the network path.
+  `verify => false`, or a CA bundle path, in the Guzzle config still works.
+- **A failed login no longer puts secrets in the exception.** The request an
+  `AuthenticationException` carries has its password, client secret, MFA passcode and tokens
+  replaced with `[redacted]`.
+- **v2 path values that are empty, `.` or `..` are refused** before anything is sent, so a value
+  cannot step out of its path segment.
+- `SECURITY.md` names the reporting channels and what is in scope. Dependabot watches composer and
+  GitHub Actions, and CI runs with read-only repository permissions.
+
 ### Fixed
 
 - **v1 methods send requests again.** They gave Guzzle an array `body`, which Guzzle 7 refuses;
@@ -58,6 +73,10 @@ All notable changes to `simtabi/netsapiens-api` are documented in this file.
   check is now `strcasecmp()` (pheg's comparison was case-insensitive too), and the error storage is
   an in-package trait, `Simtabi\NetSapiens\Traits\HasErrorStorage`, with the same public methods.
 
-## 1.0.0 - 201X-XX-XX
+## [1.0.0] - 2023-03-13
 
-- initial release
+- Initial release.
+
+[Unreleased]: https://github.com/simtabi/netsapiens-api/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/simtabi/netsapiens-api/releases/tag/v1.1.0
+[1.0.0]: https://github.com/simtabi/netsapiens-api/commit/ddf9c4a
