@@ -21,7 +21,7 @@ Semantic versioning. Changes are collected under `[Unreleased]` in [CHANGELOG.md
    git -C ~/Artisan/projects/opensource/simtabi/packages/netsapiens-api push origin vX.Y.Z
    ```
 
-3. `.github/workflows/release.yml` creates the GitHub release, with that version's CHANGELOG section as its description followed by GitHub's generated contributor notes. It fails if the section is missing. When the release already exists, the workflow replaces its notes with the CHANGELOG section instead of failing, so running it again by hand, with the tag as input, refreshes the notes.
+3. `.github/workflows/release.yml` creates the GitHub release, with that version's CHANGELOG section as its description followed by GitHub's generated contributor notes. It fails if the section is missing. When the release already exists, the workflow replaces its notes with the CHANGELOG section followed by freshly generated contributor notes, instead of failing. Running it again by hand, with the tag as input, therefore refreshes the notes.
 
 ## Regenerating for a new API release
 

@@ -44,7 +44,7 @@ If the project maintainer has any additional requirements, you will find them li
 
 - **Add tests!** - Your patch won't be accepted if it doesn't have tests. Run them with `composer test`.
 
-- **No network in tests.** Use `Simtabi\NetSapiens\Testing\FakeTransport` for v2 code and a Guzzle `MockHandler` for v1 code. No test may call a real NetSapiens server.
+- **No network in tests.** Use `Simtabi\NetSapiens\Testing\FakeTransport` for v2 code and a Guzzle `MockHandler` for v1 code. The only exception is the opt-in `live` group (`composer test-live`), which reads from a server you name and is never part of `composer test` or CI.
 
 - **Generate credentials, never write them down.** Test passwords, secrets and keys come from `tests/Support/Credentials`, which makes fresh ones every run, so secret scanners have nothing to report.
 

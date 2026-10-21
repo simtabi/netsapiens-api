@@ -4,10 +4,17 @@ All notable changes to `simtabi/netsapiens-api` are documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- `composer test-live` runs a read-only sweep of 89 GET operations against a real server named in
+  `NETSAPIENS_LIVE_*` environment variables. It is excluded from `composer test`, and skipped when
+  the variables are unset. See `docs/tools/testing.md`.
+
 ### Fixed
 
 - The release workflow no longer fails when the tag's GitHub release already exists. It refreshes
-  the release notes from the CHANGELOG instead, so a re-run is safe.
+  the release notes from the CHANGELOG, followed by GitHub's generated notes, so a re-run is safe
+  and reproduces the original release body.
 
 ## [1.1.0] - 2026-10-21
 
