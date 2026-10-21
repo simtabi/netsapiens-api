@@ -40,7 +40,14 @@ jobs:
                       exit 1
                   fi
 
-            - name: Create the GitHub release
+            # Create the release, or refresh its notes when it already exists (a re-run, or a release
+            # made by hand before this workflow ran), so the step never fails on a release that is there.
+            - name: Create or update the GitHub release
               env:
                   GH_TOKEN: ${{ github.token }}
-              run: gh release create "$TAG" --verify-tag --title "$TAG" --notes-file "$RUNNER_TEMP/notes.md" --generate-notes
+              run: |
+                  if gh release view "$TAG" > /dev/null 2>&1; then
+                      gh release edit "$TAG" --title "$TAG" --notes-file "$RUNNER_TEMP/notes.md"
+                  else
+                      gh release create "$TAG" --verify-tag --title "$TAG" --notes-file "$RUNNER_TEMP/notes.md" --generate-notes
+                  fi
