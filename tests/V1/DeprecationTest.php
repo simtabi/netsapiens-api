@@ -36,4 +36,11 @@ final class DeprecationTest extends TestCase
 
         $this->assertGreaterThanOrEqual(self::MIN_SYMBOLS, count($files));
     }
+
+    public function test_the_v1_helper_function_is_deprecated(): void
+    {
+        $helper = (string) file_get_contents(dirname(__DIR__, 2) . '/helpers/helpers.php');
+
+        $this->assertMatchesRegularExpression('/@deprecated 1\.1\.0 .*?no earlier than 2\.0\.0\.\s*\n\s*\*\/\s*\nif\s*\(\s*!function_exists\(\'netSapiensClient\'\)/s', $helper);
+    }
 }
