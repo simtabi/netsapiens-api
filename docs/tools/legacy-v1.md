@@ -40,6 +40,14 @@ try {
 
 `helpers/helpers.php` defines `netSapiensClient(...)` with the same arguments. It returns the client, or the error message as a string. That file is not in Composer's autoload, so `require` it yourself if you use it.
 
+## TLS verification
+
+Since 1.1.0 the v1 client verifies TLS certificates by default. Before that, it did not unless you asked. To trust a private CA, pass a bundle path, and to turn verification off for a local test server, pass `false`:
+
+```php
+NetSapiens::getInstance(/* … */, guzzleConfig: ['verify' => '/etc/ssl/internal-ca.pem']);
+```
+
 ## Authentication object and errors
 
 ```php

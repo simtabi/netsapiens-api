@@ -14,7 +14,8 @@
     "support": {
         "issues": "https://github.com/simtabi/netsapiens-api/issues",
         "source": "https://github.com/simtabi/netsapiens-api",
-        "docs": "https://opensource.simtabi.com/documentation/simtabi/netsapiens-api/"
+        "docs": "https://opensource.simtabi.com/documentation/simtabi/netsapiens-api/",
+        "security": "https://github.com/simtabi/netsapiens-api/security/policy"
     },
     "license": "MIT",
     "type": "library",

@@ -30,6 +30,16 @@ NetSapiens logs any request that carries an `X-NetSapiens-Log` header to iNSight
 $config = ClientConfig::forServer('pbx.example.com', logTag: 'ticket-4821');
 ```
 
+## TLS
+
+Certificates are always verified. To trust a private CA, give `GuzzleTransport` a Guzzle client that points at the bundle:
+
+```php
+$transport = new GuzzleTransport($config->baseUri, new Guzzle(['verify' => '/etc/ssl/internal-ca.pem']));
+```
+
+Turning verification off (`'verify' => false`) exposes your API key or token to anyone on the network path. Do it only against a local test server.
+
 ## Custom transport
 
 Every factory takes an optional `Transport`. Pass a `GuzzleTransport` with your own Guzzle client to add a proxy, retries or middleware:
