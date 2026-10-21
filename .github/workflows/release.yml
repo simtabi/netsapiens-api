@@ -1,0 +1,46 @@
+name: Release
+
+on:
+    push:
+        tags: ['v*.*.*']
+    workflow_dispatch:
+        inputs:
+            tag:
+                description: 'Existing tag to publish a release for, e.g. v1.1.0'
+                required: true
+
+permissions:
+    contents: write
+
+concurrency:
+    group: release-${{ inputs.tag || github.ref_name }}
+    cancel-in-progress: false
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        env:
+            TAG: ${{ inputs.tag || github.ref_name }}
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  ref: refs/tags/${{ inputs.tag || github.ref_name }}
+
+            - name: Extract this version's CHANGELOG section
+              run: |
+                  version="${TAG#v}"
+                  awk -v v="$version" '
+                      $0 ~ "^## \\[" v "\\]" { found = 1; next }
+                      found && /^## \[/       { exit }
+                      found                   { print }
+                  ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+                  if ! grep -q '[^[:space:]]' "$RUNNER_TEMP/notes.md"; then
+                      echo "::error::CHANGELOG.md has no ## [$version] section; a release needs a real description."
+                      exit 1
+                  fi
+
+            - name: Create the GitHub release
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: gh release create "$TAG" --verify-tag --title "$TAG" --notes-file "$RUNNER_TEMP/notes.md" --generate-notes

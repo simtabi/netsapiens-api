@@ -9,6 +9,9 @@ on:
         # or two green pull requests that interact.
         - cron: '17 6 * * 1'
 
+permissions:
+    contents: read
+
 concurrency:
     group: tests-${{ github.event.pull_request.number || github.ref }}
     cancel-in-progress: true
