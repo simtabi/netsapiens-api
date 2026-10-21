@@ -9,4 +9,10 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <groups>
+        <exclude>
+            <!-- Calls a real NetSapiens server; run with `composer test-live`. -->
+            <group>live</group>
+        </exclude>
+    </groups>
 </phpunit>
