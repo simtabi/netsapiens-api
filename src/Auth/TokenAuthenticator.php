@@ -16,6 +16,8 @@ use Simtabi\NetSapiens\Http\Transport;
  */
 abstract class TokenAuthenticator implements Authenticator
 {
+    private const SECRET_FIELDS = ['password', 'client_secret', 'refresh_token', 'refresh', 'passcode', 'access_token'];
+
     private readonly Closure $clock;
 
     /**
@@ -97,16 +99,32 @@ abstract class TokenAuthenticator implements Authenticator
         $response = $this->transport->send($request);
 
         if (!$response->isSuccessful()) {
-            throw ApiException::fromResponse($request, $response);
+            throw ApiException::fromResponse(self::redacted($request), $response);
         }
 
         $data = $response->decoded();
 
         if (!is_array($data) || !isset($data[$field]) || !is_string($data[$field]) || $data[$field] === '') {
-            throw new AuthenticationException(sprintf('POST %s returned no %s', $path, $field), $response->status, $request, $response);
+            throw new AuthenticationException(sprintf('POST %s returned no %s', $path, $field), $response->status, self::redacted($request), $response);
         }
 
         return $data;
+    }
+
+    /**
+     * The request as an exception may carry it: exceptions get logged and reported, so the
+     * password, secrets and tokens in a grant are replaced.
+     */
+    private static function redacted(Request $request): Request
+    {
+        $body = $request->body ?? [];
+        foreach (self::SECRET_FIELDS as $field) {
+            if (array_key_exists($field, $body)) {
+                $body[$field] = '[redacted]';
+            }
+        }
+
+        return new Request($request->method, $request->path, $request->query, $request->headers, $body, $request->multipart);
     }
 
     protected function expiresIn(mixed $seconds): ?int
