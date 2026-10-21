@@ -14,11 +14,12 @@ Semantic versioning. Changes are collected under `[Unreleased]` in [CHANGELOG.md
 ## Cutting a release
 
 1. Move the entries under `## [Unreleased]` in `CHANGELOG.md` into a new `## [X.Y.Z] - YYYY-MM-DD` section, and update the comparison links at the bottom. This goes through a pull request like any other change.
-2. After it merges, tag the merge commit and push the tag:
+2. After it merges, tag the merge commit and push the tag. From the root of your clone:
 
    ```bash
-   git -C ~/Artisan/projects/opensource/simtabi/packages/netsapiens-api tag -a vX.Y.Z -m vX.Y.Z origin/master
-   git -C ~/Artisan/projects/opensource/simtabi/packages/netsapiens-api push origin vX.Y.Z
+   git fetch origin
+   git tag -a vX.Y.Z -m vX.Y.Z origin/master
+   git push origin vX.Y.Z
    ```
 
 3. `.github/workflows/release.yml` creates the GitHub release, with that version's CHANGELOG section as its description followed by GitHub's generated contributor notes. It fails if the section is missing. When the release already exists, the workflow replaces its notes with the CHANGELOG section followed by freshly generated contributor notes, instead of failing. Running it again by hand, with the tag as input, therefore refreshes the notes.
