@@ -47,6 +47,9 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
               run: |
                   if gh release view "$TAG" > /dev/null 2>&1; then
+                      # edit cannot generate notes, so ask the API for the same ones create would add
+                      printf '\n' >> "$RUNNER_TEMP/notes.md"
+                      gh api "repos/$GITHUB_REPOSITORY/releases/generate-notes" -f tag_name="$TAG" --jq .body >> "$RUNNER_TEMP/notes.md"
                       gh release edit "$TAG" --title "$TAG" --notes-file "$RUNNER_TEMP/notes.md"
                   else
                       gh release create "$TAG" --verify-tag --title "$TAG" --notes-file "$RUNNER_TEMP/notes.md" --generate-notes
