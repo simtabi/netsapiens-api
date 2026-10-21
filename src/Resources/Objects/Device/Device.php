@@ -92,9 +92,7 @@ class Device  extends Resource
     public function setDevicePassword(array $params): array
     {
 
-        /** @todo fix api endpoint */
-
-        $this->setEndpoint('?object=queuedcall&action=create', __FUNCTION__);
+        $this->setEndpoint('?object=device&action=update', __FUNCTION__);
 
         $bodyParams = [
             'object'       => "device",

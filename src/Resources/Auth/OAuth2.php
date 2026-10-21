@@ -37,6 +37,9 @@ class OAuth2
     private string|null        $refreshToken   = null;
     private string|null        $apiVersion     = null;
 
+    /** @var array<string, mixed> Guzzle options for the token request only; empty keeps the previous behaviour. */
+    private array              $guzzleConfig   = [];
+
     /**
      */
     public function __construct(string|null $baseUrl)
@@ -63,6 +66,25 @@ class OAuth2
     public function getBaseUrl(): ?string
     {
         return $this->baseUrl;
+    }
+
+    /**
+     * Guzzle options used for the token request, e.g. a handler in tests or a proxy.
+     *
+     * @param array<string, mixed> $guzzleConfig
+     */
+    public function setGuzzleConfig(array $guzzleConfig): static
+    {
+        $this->guzzleConfig = $guzzleConfig;
+        return $this;
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function getGuzzleConfig(): array
+    {
+        return $this->guzzleConfig;
     }
 
     /**
@@ -415,7 +437,7 @@ class OAuth2
     /**
      * @throws NetSapiensException
      */
-    private function request(string $grantType, callable $cacher, string|null $refreshToken = null)
+    private function request(string $grantType, ?callable $cacher, string|null $refreshToken = null)
     {
 
         if (empty($this->clientId)) {
@@ -450,9 +472,8 @@ class OAuth2
             throw new NetsapiensException(Helpers::ENCOUNTERED_ERRORS);
         }
 
-        if (!is_callable($cacher) || empty($cacher)) {
-            throw new NetSapiensException('You must provide a caching function');
-        }
+        // No cacher means no caching: the token response is used as returned.
+        $cacher ??= static fn (array $args): mixed => $args[0];
 
         try {
 
@@ -463,16 +484,16 @@ class OAuth2
 
             // Define credentials based on grant type
             if (strcasecmp($grantType, 'refresh_token') === 0) { // case-insensitive, as the pheg call it replaces
-                $parameters['refresh_token'] = $this->password;
+                $parameters['refresh_token'] = $refreshToken;
             } else {
                 $parameters['username']      = $this->username;
                 $parameters['password']      = $this->password;
             }
 
             // Authenticate
-            $response = (new Client([
+            $response = (new Client(array_merge($this->guzzleConfig, [
                 'base_uri' => $this->baseUrl,
-            ]))->post('ns-api/oauth2/token', [
+            ])))->post('ns-api/oauth2/token', [
                 'headers' => ['Content-Type' => 'application/json',],
                 'body'    => json_encode($parameters),
             ]);
@@ -516,24 +537,24 @@ class OAuth2
     }
 
     /**
-     * @param callable $cacher
+     * @param callable|null $cacher null skips caching
      *
      * @return bool
      * @throws NetSapiensException
      */
-    public function generateAccessToken(callable $cacher): bool
+    public function generateAccessToken(?callable $cacher = null): bool
     {
         return $this->request('password', $cacher);
     }
 
     /**
      * @param string   $refreshToken
-     * @param callable $cacher
+     * @param callable|null $cacher null skips caching
      *
      * @return bool
      * @throws NetSapiensException
      */
-    public function generateRefreshToken(string $refreshToken, callable $cacher): bool
+    public function generateRefreshToken(string $refreshToken, ?callable $cacher = null): bool
     {
         return $this->request('refresh_token', $cacher, $refreshToken);
     }

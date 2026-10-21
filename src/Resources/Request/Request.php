@@ -134,6 +134,12 @@ class Request
             // Authenticate
             $this->oAuth2->generateAccessToken($cacher);
 
+            // Guzzle 7 refuses an array 'body'; the v1 API takes these as form fields.
+            if (isset($parameters['body']) && is_array($parameters['body'])) {
+                $parameters['form_params'] = $parameters['body'];
+                unset($parameters['body']);
+            }
+
             // Request data
             $parameters['verify']  = $verify;
             $parameters['headers'] = array_merge($headers, [

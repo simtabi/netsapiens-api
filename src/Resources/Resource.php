@@ -16,7 +16,7 @@ abstract class Resource
     protected mixed   $cacher;
     protected array   $guzzleConfig = [];
 
-    public function __construct(OAuth2 $oAuth2, callable $cacher, array $guzzleConfig = [])
+    public function __construct(OAuth2 $oAuth2, ?callable $cacher = null, array $guzzleConfig = [])
     {
         $this->guzzleConfig = $guzzleConfig;
         $this->request      = new Request($oAuth2, $guzzleConfig);

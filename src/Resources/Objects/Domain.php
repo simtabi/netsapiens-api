@@ -51,7 +51,7 @@ class Domain  extends Resource
 
         $bodyParams = [
             'object' => "domain",
-            'action' => "read",
+            'action' => "create",
         ];
 
         if ( isset($params["domain"]) ) {
