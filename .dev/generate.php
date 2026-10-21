@@ -322,11 +322,15 @@ foreach ($byClass as $class => $group) {
         $methods[] = implode("\n", $doc) . "\n    public function {$name}({$signature}): {$returnType}\n    {\n        {$body}\n    }";
 
         $fixture[] = [
-            'class'  => "Simtabi\\NetSapiens\\Resources\\V2\\{$class}",
-            'method' => $name,
-            'verb'   => $entry['verb'],
-            'path'   => $entry['path'],
-            'params' => $pathParams,
+            'class'   => "Simtabi\\NetSapiens\\Resources\\V2\\{$class}",
+            'method'  => $name,
+            'verb'    => $entry['verb'],
+            'path'    => $entry['path'],
+            'params'  => $pathParams,
+            'query'   => $query,
+            'body'    => $multipart ? 'multipart' : ($hasBody ? 'json' : null),
+            'returns' => $kind === 'mixed' ? null : [$kind, $model === '' ? null : "Simtabi\\NetSapiens\\Data\\{$model}"],
+            'page'    => $page,
         ];
     }
 

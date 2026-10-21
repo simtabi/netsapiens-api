@@ -27,7 +27,19 @@ final class ResourceContractTest extends TestCase
 
     private const MIN_RESOURCES = 78;
 
-    /** @return list<array{class: class-string, method: string, verb: string, path: string, params: array<string, string>}> */
+    /** Measured 2026-10-21: operations taking query parameters, and the parameters across them. */
+    private const MIN_QUERY_OPERATIONS = 61;
+
+    private const MIN_QUERY_PARAMETERS = 210;
+
+    /** Measured 2026-10-21: operations with a JSON body, a multipart body, and a typed return. */
+    private const MIN_JSON_BODIES = 143;
+
+    private const MIN_MULTIPART_BODIES = 5;
+
+    private const MIN_TYPED_RETURNS = 146;
+
+    /** @return list<array{class: class-string, method: string, verb: string, path: string, params: array<string, string>, query: array<string, string>, body: 'json'|'multipart'|null, returns: array{0: string, 1: class-string|null}|null, page: string}> */
     private static function operations(): array
     {
         return require dirname(__DIR__) . '/Fixtures/operations.php';
@@ -75,6 +87,123 @@ final class ResourceContractTest extends TestCase
         }
 
         $this->assertGreaterThanOrEqual(self::MIN_OPERATIONS, $checked);
+    }
+
+    /**
+     * Every documented query parameter reaches the query string under its API name, and the body
+     * reaches the request in the form the page documents.
+     */
+    public function test_every_operation_sends_its_documented_query_and_body(): void
+    {
+        $fake       = new FakeTransport(Response::json(200, []));
+        $client     = Client::withApiKey('pbx.example.test', Credentials::key(), $fake);
+        $json       = ['user' => '1001', 'nested' => ['a' => 1]];
+        $parts      = [['name' => 'file', 'contents' => 'RIFF', 'filename' => 'greeting.wav']];
+        $queryOps   = $queryParams = $jsonBodies = $multipartBodies = 0;
+
+        foreach (self::operations() as $op) {
+            $label  = "{$op['class']}::{$op['method']}";
+            $args   = [];
+            $values = [];
+            foreach ((new ReflectionMethod($op['class'], $op['method']))->getParameters() as $i => $param) {
+                $type  = $param->getType() instanceof ReflectionNamedType ? $param->getType()->getName() : 'mixed';
+                $name  = $param->getName();
+                $value = match (true) {
+                    $name === 'body'      => $json,
+                    $name === 'multipart' => $parts,
+                    $type === 'int'       => 40 + $i,
+                    $type === 'float'     => 2.5,
+                    $type === 'bool'      => true,
+                    default               => "v{$i}",
+                };
+                $args[$name]   = $value;
+                $values[$name] = $value;
+            }
+
+            $client->{lcfirst((new ReflectionClass($op['class']))->getShortName())}()->{$op['method']}(...$args);
+            $sent = $fake->last();
+
+            $expected = [];
+            foreach ($op['query'] as $apiName => $argName) {
+                $this->assertArrayHasKey($argName, $values, "{$label} has an argument for query parameter {$apiName}");
+                $expected[$apiName] = is_bool($values[$argName]) ? ($values[$argName] ? 'true' : 'false') : $values[$argName];
+            }
+            $this->assertSame($expected, $sent?->query, "{$label} query");
+
+            match ($op['body']) {
+                'json'      => $this->assertSame($json, $sent?->body, "{$label} body"),
+                'multipart' => $this->assertSame($parts, $sent?->multipart, "{$label} multipart"),
+                default     => $this->assertTrue($sent?->body === null && $sent->multipart === null, "{$label} sends no body"),
+            };
+
+            $queryOps        += $op['query'] === [] ? 0 : 1;
+            $queryParams     += count($op['query']);
+            $jsonBodies      += $op['body'] === 'json' ? 1 : 0;
+            $multipartBodies += $op['body'] === 'multipart' ? 1 : 0;
+        }
+
+        $this->assertGreaterThanOrEqual(self::MIN_QUERY_OPERATIONS, $queryOps);
+        $this->assertGreaterThanOrEqual(self::MIN_QUERY_PARAMETERS, $queryParams);
+        $this->assertGreaterThanOrEqual(self::MIN_JSON_BODIES, $jsonBodies);
+        $this->assertGreaterThanOrEqual(self::MIN_MULTIPART_BODIES, $multipartBodies);
+    }
+
+    /**
+     * An operation whose page documents a model returns that model, or a list of it; every other
+     * operation returns the decoded JSON untouched.
+     */
+    public function test_every_operation_returns_its_documented_shape(): void
+    {
+        $object  = ['domain' => 'example.test', 'user' => '1001', 'total' => '3', 'undocumented' => 'kept'];
+        $typed   = 0;
+
+        foreach (self::operations() as $op) {
+            $label   = "{$op['class']}::{$op['method']}";
+            $kind    = $op['returns'][0] ?? 'mixed';
+            $payload = $kind === 'many' ? [$object, $object] : $object;
+            $fake    = new FakeTransport(Response::json(200, $payload));
+            $client  = Client::withApiKey('pbx.example.test', Credentials::key(), $fake);
+
+            $args = [];
+            foreach ((new ReflectionMethod($op['class'], $op['method']))->getParameters() as $param) {
+                if ($param->isOptional()) {
+                    break;
+                }
+                $type   = $param->getType() instanceof ReflectionNamedType ? $param->getType()->getName() : 'string';
+                $args[] = match ($type) { 'int' => 1, 'float' => 1.0, 'bool' => true, 'array' => [], default => 'x' };
+            }
+
+            $result = $client->{lcfirst((new ReflectionClass($op['class']))->getShortName())}()->{$op['method']}(...$args);
+
+            if ($kind === 'one') {
+                $this->assertInstanceOf($op['returns'][1], $result, $label);
+                $this->assertSame($object, $result->toArray(), "{$label} keeps the payload");
+                $typed++;
+            } elseif ($kind === 'many') {
+                $this->assertIsList($result, $label);
+                $this->assertCount(2, $result, $label);
+                $this->assertContainsOnlyInstancesOf($op['returns'][1], $result, $label);
+                $typed++;
+            } else {
+                $this->assertSame($object, $result, "{$label} returns the decoded JSON");
+            }
+        }
+
+        $this->assertGreaterThanOrEqual(self::MIN_TYPED_RETURNS, $typed);
+    }
+
+    public function test_every_operation_links_its_reference_page(): void
+    {
+        $operations = self::operations();
+        $pages      = array_filter(array_column($operations, 'page'));
+
+        $this->assertCount(count($operations), $pages, 'every operation came from a reference page');
+
+        foreach ($operations as $op) {
+            $doc = (string) (new ReflectionMethod($op['class'], $op['method']))->getDocComment();
+            $this->assertStringContainsString("@see https://docs.ns-api.com/reference/{$op['page']}", $doc, "{$op['class']}::{$op['method']}");
+            $this->assertStringContainsString("{$op['verb']} {$op['path']}", $doc, "{$op['class']}::{$op['method']}");
+        }
     }
 
     public function test_path_values_are_url_encoded(): void
