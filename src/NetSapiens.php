@@ -65,6 +65,10 @@ use Simtabi\NetSapiens\Resources\Objects\UIConfig;
 use Simtabi\NetSapiens\Resources\Objects\Upload;
 use Simtabi\NetSapiens\Resources\Objects\VoicemailReminders;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Client (Client::withAccessToken(), withApiKey(), withJwt()) instead. Removal no earlier than 2.0.0.
+ */
 class NetSapiens
 {
 

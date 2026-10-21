@@ -9,6 +9,9 @@ namespace Simtabi\NetSapiens\Traits;
  * package that provided it, which no longer exists, so `OAuth2` and `Request` could not be loaded.
  * This keeps the same public surface (`getErrors`, `hasErrors`, `clearErrors`, `addError`,
  * `getErrorCount`, `getFirstError`, protected `setErrors`) without a framework dependency.
+ *
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. v2 throws Simtabi\NetSapiens\Exceptions\ApiException and its subclasses instead. Removal no earlier than 2.0.0.
  */
 trait HasErrorStorage
 {

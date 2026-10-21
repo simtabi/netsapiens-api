@@ -8,6 +8,10 @@ use Simtabi\NetSapiens\Helpers\Helpers;
 use Simtabi\NetSapiens\Resources\Auth\OAuth2;
 use Simtabi\NetSapiens\Resources\Resource;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Client::devices() instead. Removal no earlier than 2.0.0.
+ */
 class Device  extends Resource
 {
 
@@ -92,9 +96,7 @@ class Device  extends Resource
     public function setDevicePassword(array $params): array
     {
 
-        /** @todo fix api endpoint */
-
-        $this->setEndpoint('?object=queuedcall&action=create', __FUNCTION__);
+        $this->setEndpoint('?object=device&action=update', __FUNCTION__);
 
         $bodyParams = [
             'object'       => "device",

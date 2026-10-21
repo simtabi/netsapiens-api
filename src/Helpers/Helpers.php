@@ -15,6 +15,10 @@ use Phpfastcache\Exceptions\PhpfastcacheLogicException;
 use Psr\Cache\InvalidArgumentException;
 use Simtabi\NetSapiens\Exceptions\NetSapiensException;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Auth\Psr16TokenStore for caching; ClientConfig for the base URL instead. Removal no earlier than 2.0.0.
+ */
 class Helpers
 {
 

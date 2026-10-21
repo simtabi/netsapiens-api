@@ -5,6 +5,10 @@ namespace Simtabi\NetSapiens\Resources\Objects;
 use Simtabi\NetSapiens\Resources\Auth\OAuth2;
 use Simtabi\NetSapiens\Resources\Resource;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Client::domains() instead. Removal no earlier than 2.0.0.
+ */
 class Domain  extends Resource
 {
 
@@ -51,7 +55,7 @@ class Domain  extends Resource
 
         $bodyParams = [
             'object' => "domain",
-            'action' => "read",
+            'action' => "create",
         ];
 
         if ( isset($params["domain"]) ) {

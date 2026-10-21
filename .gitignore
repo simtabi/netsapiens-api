@@ -33,3 +33,5 @@ yarn.lock
 /storage/.license
 
 /log
+# Libraries do not track a lock file
+composer.lock

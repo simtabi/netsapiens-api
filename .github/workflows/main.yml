@@ -2,11 +2,22 @@ name: Tests
 
 on:
     pull_request:
+        types: [opened, synchronize, reopened, ready_for_review]
     workflow_dispatch:
+    schedule:
+        # Weekly run on the default branch catches drift after merges: a dependency release,
+        # or two green pull requests that interact.
+        - cron: '17 6 * * 1'
+
+concurrency:
+    group: tests-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
 
 jobs:
     test:
+        if: ${{ github.event_name != 'pull_request' || !github.event.pull_request.draft }}
         runs-on: ubuntu-latest
+        timeout-minutes: 15
         strategy:
             fail-fast: false
             matrix:
@@ -16,7 +27,7 @@ jobs:
         name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
 
         steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@v7
 
             - name: Setup PHP
               uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2

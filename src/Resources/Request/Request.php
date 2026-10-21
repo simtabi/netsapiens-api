@@ -23,6 +23,10 @@ use Simtabi\NetSapiens\Helpers\Helpers;
 use Simtabi\NetSapiens\Resources\Auth\OAuth2;
 use TypeError;
 
+/**
+ * @deprecated 1.1.0 The v1 API (ns-api/?object=…&action=…) is no longer documented on
+ *             docs.ns-api.com. Use Simtabi\NetSapiens\Http\Transport (GuzzleTransport) behind Client::send() instead. Removal no earlier than 2.0.0.
+ */
 class Request
 {
 
@@ -133,6 +137,12 @@ class Request
 
             // Authenticate
             $this->oAuth2->generateAccessToken($cacher);
+
+            // Guzzle 7 refuses an array 'body'; the v1 API takes these as form fields.
+            if (isset($parameters['body']) && is_array($parameters['body'])) {
+                $parameters['form_params'] = $parameters['body'];
+                unset($parameters['body']);
+            }
 
             // Request data
             $parameters['verify']  = $verify;
