@@ -65,6 +65,29 @@ final class DocsTest extends TestCase
         $this->assertGreaterThan(50, $checked);
     }
 
+    /**
+     * Commands in the docs must work from any clone, so no page may name a path on one
+     * maintainer's machine: a home directory, or a "~/" path. The API's own "~" segments
+     * (/domains/~/users/~) are preceded by a slash and are not matched.
+     */
+    public function test_no_document_names_a_local_machine_path(): void
+    {
+        $root  = self::root();
+        $files = array_merge(
+            array_filter([$root . '/README.md', $root . '/CHANGELOG.md', $root . '/CONTRIBUTING.md', $root . '/SECURITY.md'], 'is_file'),
+            self::pages(),
+        );
+        $pattern = '#(/Users/|/home/[a-z]|[A-Z]:\\\\Users\\\\|(?<![/\w])~/)#';
+
+        foreach ($files as $file) {
+            foreach (file($file) ?: [] as $number => $line) {
+                $this->assertDoesNotMatchRegularExpression($pattern, $line, sprintf('%s:%d names a local path', $file, $number + 1));
+            }
+        }
+
+        $this->assertGreaterThanOrEqual(self::MIN_PAGES + 4, count($files));
+    }
+
     public function test_the_readme_keeps_the_required_sections_in_order(): void
     {
         $readme = (string) file_get_contents(self::root() . '/README.md');
