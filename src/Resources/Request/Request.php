@@ -126,7 +126,7 @@ class Request
     }
 
 
-    public function request(string $method, string $endpoint, array $parameters, array $headers = [], bool $verify = false, callable|null $cacher = null): bool|string|StreamInterface
+    public function request(string $method, string $endpoint, array $parameters, array $headers = [], bool|string $verify = true, callable|null $cacher = null): bool|string|StreamInterface
     {
         try {
 
@@ -144,7 +144,8 @@ class Request
                 unset($parameters['body']);
             }
 
-            // Request data
+            // Request data. TLS certificates are verified unless the caller passes verify => false
+            // (or a CA bundle path) in its Guzzle config.
             $parameters['verify']  = $verify;
             $parameters['headers'] = array_merge($headers, [
                 'Authorization' => 'Bearer ' . $this->oAuth2->getAccessToken(),
